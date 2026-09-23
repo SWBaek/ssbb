@@ -1,0 +1,105 @@
+name: Reproduce BB v2 reference-grounded THD study
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'bootstrap_v2/**'
+      - 'v2/src/**'
+      - 'v2/tests/**'
+      - 'v2/docs/**'
+      - 'v2/evidence/**'
+      - 'v2/study_config.json'
+      - 'v2/requirements.txt'
+      - '.github/workflows/reproduce_v2.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: numerical-bb-main
+  cancel-in-progress: false
+jobs:
+  reproduce-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Restore hash-verified v2 source snapshot
+        if: hashFiles('bootstrap_v2/manifest.json') != ''
+        run: |
+          python - <<'PY'
+          import hashlib, json, lzma
+          from pathlib import Path
+          root = Path.cwd().resolve()
+          mp = root / 'bootstrap_v2/manifest.json'
+          manifest = json.loads(mp.read_text())
+          parts = [root / name for name in manifest['parts']]
+          packed = b''.join(p.read_bytes() for p in parts)
+          assert hashlib.sha256(packed).hexdigest() == manifest['compressed_sha256'], 'Source transfer hash mismatch'
+          raw = lzma.decompress(packed)
+          assert len(raw) == manifest['raw_bytes']
+          files = json.loads(raw)
+          assert len(files) == manifest['files']
+          for name, content in files.items():
+              path = (root / name).resolve()
+              assert name.startswith('v2/') and path.is_relative_to(root / 'v2'), 'Unsafe source path'
+              assert isinstance(content, str)
+              path.parent.mkdir(parents=True, exist_ok=True)
+              path.write_text(content, encoding='utf-8')
+          for path in parts:
+              path.unlink()
+          mp.unlink()
+          print(f'Restored {len(files)} exact UTF-8 source files')
+          PY
+      - name: Install pinned scientific dependencies
+        run: python -m pip install -r v2/requirements.txt
+      - name: Execute sequential v2 study and independent output checks
+        working-directory: v2
+        env:
+          MPLBACKEND: Agg
+          NUMBA_NUM_THREADS: '2'
+          OPENBLAS_NUM_THREADS: '1'
+        run: |
+          python -m src.study
+          python -m src.checks
+      - name: Record publication context and mark legacy report
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          info = {'source_commit': os.environ['SOURCE_COMMIT'], 'workflow_run_url': os.environ['RUN_URL'], 'stage': 'study_and_tests_passed_before_git_publication', 'note': 'Final publication success is determined by the commit step and Actions result. Numerical study only; not hardware validation.'}
+          Path('v2/results/publication.json').write_text(json.dumps(info, indent=2), encoding='utf-8')
+          p = Path('report/index.html')
+          if p.exists():
+              text = p.read_text(encoding='utf-8')
+              if 'legacy-v1-warning' not in text:
+                  banner = '<aside id="legacy-v1-warning" style="position:fixed;bottom:0;left:0;right:0;z-index:99999;padding:12px;background:#fff2c4;color:#302900;font:16px sans-serif">LEGACY v1: 초기 THD의 제품 현실성 근거가 부족하여 현 수행본으로 사용하지 않습니다. <a href="../v2/report/index.html">v2 보고서 보기</a></aside>'
+                  text = text.replace('</body>', banner + '</body>')
+                  p.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit complete v2 raw data and report
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: publish reference-grounded v2 THD study and all raw evidence [skip ci]' -m 'AI-Model: GPT-6 Astra Pro'
+            git push origin HEAD:main
+          fi
+      - name: Preserve generated v2 evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ssbb-v2-evidence
+          path: |
+            v2
+            !v2/**/__pycache__/**
+            !v2/**/*.pyc
+            !v2/**/*.nbc
+            !v2/**/*.nbi
+          retention-days: 14
