@@ -6,8 +6,9 @@ on:
       - 'src/**'
       - 'tests/**'
       - 'requirements.txt'
-      - 'report_template.py'
       - 'study_config.json'
+      - 'bootstrap/manifest.json'
+      - 'refresh_report.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -23,6 +24,32 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - name: Restore exact source snapshot (initial publication only)
+        if: hashFiles('bootstrap/manifest.json') != ''
+        run: |
+          python - <<'PY'
+          import hashlib, json, lzma
+          from pathlib import Path
+          root = Path.cwd()
+          manifest = json.loads((root/'bootstrap/manifest.json').read_text())
+          parts = [root/name for name in manifest['parts']]
+          blob = b''.join(p.read_bytes() for p in parts)
+          assert hashlib.sha256(blob).hexdigest() == manifest['sha256'], 'Source transfer hash mismatch'
+          raw = lzma.decompress(blob)
+          assert len(raw) == manifest['uncompressed_bytes']
+          files = json.loads(raw)
+          assert len(files) == manifest['files']
+          for name, content in files.items():
+              p = (root/name).resolve()
+              assert p.is_relative_to(root) and not name.startswith('.github/'), 'Unsafe source path'
+              assert isinstance(content, str)
+              p.parent.mkdir(parents=True, exist_ok=True)
+              p.write_text(content, encoding='utf-8')
+          for p in parts:
+              p.unlink()
+          (root/'bootstrap/manifest.json').unlink()
+          print(f'Restored {len(files)} hash-verified source files')
+          PY
       - name: Install pinned scientific dependencies
         run: python -m pip install -r requirements.txt
       - name: Verify and execute sequential study
@@ -33,13 +60,13 @@ jobs:
         run: |
           python -m src.study
           python -m unittest discover -s tests -v
-      - name: Commit generated evidence to the same private repository
+      - name: Commit source and generated evidence
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data results report
+          git add -A
           if ! git diff --cached --quiet; then
-            git commit -m 'data: reproduce numerical results and HTML report [skip ci]' -m 'AI-Model: GPT-6 Astra Pro'
+            git commit -m 'data: publish reproducible numerical study and HTML report [skip ci]' -m 'AI-Model: GPT-6 Astra Pro'
             git push origin HEAD:main
           fi
       - name: Preserve evidence if publication fails
@@ -51,4 +78,10 @@ jobs:
             results
             data
             report
+            src
+            tests
+            docs
+            requirements.txt
+            study_config.json
+            README.md
           retention-days: 14
