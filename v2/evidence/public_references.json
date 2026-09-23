@@ -1,0 +1,68 @@
+[
+  {
+    "id": "R1",
+    "manufacturer": "Texas Instruments",
+    "design": "TIDM-02013 / PMP22650",
+    "document": "TIDUF18A",
+    "date": "2024-02",
+    "url": "https://www.ti.com/lit/ug/tiduf18a/tiduf18a.pdf",
+    "page": 81,
+    "location": "5.2.4.2; Figure 5-48",
+    "mode": "AC-to-DC full OBC system; not Q-injection V2G validation",
+    "conditions": "240 Vrms input, 350 V output, coolant 20 C; 7.4 kW rating",
+    "evidence": "Text: loads above 1.5 kW have THD <5%. Graph shows increasing THD below this load.",
+    "visual_check": "PDF page 81 rendered and inspected",
+    "use": "Closest automotive topology/rating benchmark. No cross-mode fit."
+  },
+  {
+    "id": "R2",
+    "manufacturer": "Texas Instruments",
+    "design": "TIDM-02008",
+    "document": "TIDUD61E",
+    "date": "2021-04",
+    "url": "https://www.ti.com/lit/ug/tidud61e/tidud61e.pdf",
+    "page": 76,
+    "location": "Figure 3-80",
+    "mode": "Input-current PFC curves, despite bidirectional hardware capability",
+    "conditions": "230 Vrms/50 Hz and 120 Vrms/60 Hz; 3.3 kW high-line rating",
+    "evidence": "230 V curve approximately 6% near 450 W and 4-5% near 600-850 W; under roughly 200 W reaches about 18%. Graph readings, not exact table values.",
+    "visual_check": "PDF pages 63 and 76 rendered and inspected",
+    "use": "Load dependence; high THD alone is not proof of defective control. Page 63 reports adaptive RED limits 20-200 ns on THIS GaN reference; not universal OBC dead time."
+  },
+  {
+    "id": "R3",
+    "manufacturer": "Texas Instruments",
+    "design": "TIDA-010062",
+    "document": "TIDUET7G",
+    "date": "2023-10",
+    "url": "https://www.ti.com/lit/ug/tiduet7g/tiduet7g.pdf",
+    "page": 53,
+    "location": "Table 3-5",
+    "mode": "PFC stage of server/telecom 1 kW supply, AC-to-DC",
+    "conditions": "Approximately 230 Vac; data listed by DC output power",
+    "evidence": "Selected original Pout W / iTHD % pairs: 105.48 / 11.50; 234.54 / 4.76; 474.41 / 2.41; 992.43 / 1.38.",
+    "visual_check": "PDF page 53 rendered and inspected",
+    "use": "Numerical scale check only, no equivalent automotive or V2G population claim. Product feature bullet differs from first table row; preserve table value."
+  },
+  {
+    "id": "R4",
+    "manufacturer": "STMicroelectronics",
+    "design": "STEVAL-DPSTPFC1",
+    "url": "https://www.st.com/en/solutions-reference-designs/sl-dpstpfc1.html",
+    "accessed": "2026-09-23",
+    "mode": "AC-to-DC totem-pole PFC, not V2G Q operation",
+    "conditions": "3.6 kW at 230 V/50 Hz; 1.6 kW at 110 V/60 Hz",
+    "evidence": "Full-load minimum THD 3.5% at 230 V/50 Hz and 4.2% at 110 V/60 Hz. The same solution page also describes 5% max THD at 10% maximum load; this illustrates design-to-design variation, not a universal 5-8% baseline.",
+    "use": "Independent manufacturer comparison, not a universal average."
+  },
+  {
+    "id": "R5",
+    "manufacturer": "Texas Instruments",
+    "design": "TIDA-01604",
+    "url": "https://www.ti.com/tool/TIDA-01604",
+    "accessed": "2026-09-23",
+    "mode": "6.6 kW SiC OBC PFC reference",
+    "evidence": "Advertises THD <2%; page does not establish this for every light-load/Q condition.",
+    "use": "Do not call 5-8% the industry-wide nominal average."
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "number": 1,
+    "title": "저부하 THD 개선 | 재수행 v2",
+    "source": "results/summary.json; 2026-09-23"
+  },
+  {
+    "number": 2,
+    "title": "v1의 숫자를 줄인 것이 아니라 모델을 바꿨다",
+    "source": "docs/00_protocol.md; evidence/preliminary_*.json"
+  },
+  {
+    "number": 3,
+    "title": "“평균적인 THD” 하나로 제품군을 대표할 수 없다",
+    "source": "R1 p81 Fig5-48; R2 p76 Fig3-80; R3 p53 Table3-5; R4 official solution page"
+  },
+  {
+    "number": 4,
+    "title": "선정한 초기 수준: 저부하 취약영역 약5~8%",
+    "source": "results/baseline_by_load.csv; evidence/public_references.json"
+  },
+  {
+    "number": 5,
+    "title": "Project Y와 판정의 분모를 고정했다",
+    "source": "study_config.json; src/model.py::metrics"
+  },
+  {
+    "number": 6,
+    "title": "P가 아니라 S와 위상을 분리했다",
+    "source": "results/*_cases.csv; docs/00_protocol.md"
+  },
+  {
+    "number": 7,
+    "title": "전력단과 제어기를 실제로 시간 적분했다",
+    "source": "src/model.py; docs/01_model.md"
+  },
+  {
+    "number": 8,
+    "title": "Gage R&R 대신 구현과 수치오차를 확인했다",
+    "source": "results/verification.json; convergence.csv; final_numerical_crosschecks.csv"
+  },
+  {
+    "number": 9,
+    "title": "초기 문제는 정상 변환 중 저부하 전류 왜곡이다",
+    "source": "results/baseline.csv; baseline_by_load.csv"
+  },
+  {
+    "number": 10,
+    "title": "plant 가정과 변경할 제어 인자를 구분했다",
+    "source": "results/plant_sensitivity.csv; src/model.py"
+  },
+  {
+    "number": 11,
+    "title": "정확한 역보상 대신 전류오차 피드백을 사용했다",
+    "source": "src/model.py::Control, oscillator, _run"
+  },
+  {
+    "number": 12,
+    "title": "후보선정은 튜닝군의 성능만 사용했다",
+    "source": "results/doe_candidates.csv; selected_control.json"
+  },
+  {
+    "number": 13,
+    "title": "제어 이득 변경과 고조파 피드백 효과를 분리했다",
+    "source": "results/ablation.csv; 6개 설정×9개 조건=54회"
+  },
+  {
+    "number": 14,
+    "title": "개선 전후 파형은 같은 조건에서 직접 계산했다",
+    "source": "data/baseline.npz & improved.npz; primary M002"
+  },
+  {
+    "number": 15,
+    "title": "왜곡 감소가 어느 차수에서 일어났는지 확인했다",
+    "source": "data/*npz::harmonics; M002"
+  },
+  {
+    "number": 16,
+    "title": "주45점: 평균5.96% → 2.80%",
+    "source": "results/paired_main.csv; summary.json"
+  },
+  {
+    "number": 17,
+    "title": "독립 시험조건에서 모델 오차까지 바꿨다",
+    "source": "results/holdout_cases.csv; docs/00_protocol.md"
+  },
+  {
+    "number": 18,
+    "title": "별도72점: 최대THD4.47%, 종합72/72 통과",
+    "source": "results/holdout_baseline.csv; holdout_improved.csv"
+  },
+  {
+    "number": 19,
+    "title": "중고부하는 별도 확인, 주성과 분모와 분리",
+    "source": "results/sentinel_baseline.csv; sentinel_improved.csv"
+  },
+  {
+    "number": 20,
+    "title": "남은 실패: 7 kVA·253 Vac·+45°의 전압 여유",
+    "source": "results/sentinel_failures.csv; data/sentinel_*.npz"
+  },
+  {
+    "number": 21,
+    "title": "실제 Q 운전의 고유 원인은 아직 증명하지 못했다",
+    "source": "results/phase.csv; phase_invariance.csv; docs/02_logic_review.md"
+  },
+  {
+    "number": 22,
+    "title": "과도응답은 별도 진단값으로 남겼다",
+    "source": "results/transient_diagnostics.csv; data/transient.npz"
+  },
+  {
+    "number": 23,
+    "title": "663개 계산을 원시 파형에서 다시 확인했다",
+    "source": "results/raw_audit.json; test_report.json; manifest.json"
+  },
+  {
+    "number": 24,
+    "title": "기존 BB 보고서 비교 1~6 /11",
+    "source": "docs/03_reference_comparison.md; reference_cases.json; 기존 전체230장"
+  },
+  {
+    "number": 25,
+    "title": "기존 BB 보고서 비교 7~11 /11",
+    "source": "docs/03_reference_comparison.md; reference_cases.json; 기존 전체230장"
+  },
+  {
+    "number": 26,
+    "title": "논리적으로 닫힌 부분과 열린 부분을 구분했다",
+    "source": "docs/02_logic_review.md"
+  },
+  {
+    "number": 27,
+    "title": "결과보다 재실행 가능한 시험자산을 관리한다",
+    "source": "README.md; requirements.txt; results/manifest.json"
+  },
+  {
+    "number": 28,
+    "title": "현실적인 초기 규모에서 개선 후보를 확보했다",
+    "source": "results/summary.json; docs/02_logic_review.md"
+  },
+  {
+    "number": 29,
+    "title": "공식 자료와 출처의 적용 범위",
+    "source": "확인일2026-09-23; PDF의 표/그래프는 원문페이지 렌더링으로 확인; 원자료 이미지·PDF는 재배포하지 않음"
+  }
+]

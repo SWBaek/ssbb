@@ -1,0 +1,6 @@
+{
+  "source_commit": "c8ea1e98a2db994222efc56c715ef3f93b699154",
+  "workflow_run_url": "https://github.com/SWBaek/ssbb/actions/runs/35827198977",
+  "stage": "study_and_tests_passed_before_git_publication",
+  "note": "Final publication success is determined by the commit step and Actions result. Numerical study only; not hardware validation."
+}

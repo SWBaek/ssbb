@@ -1,0 +1,14 @@
+[
+  {
+    "check": "Every performance record has raw data and repeatable THD/guard",
+    "passed": true,
+    "n": 663,
+    "max_thd_error_pp": 1.7763568394002505e-15,
+    "max_harmonic_error_a": 0.0
+  },
+  {
+    "check": "Final RK4/duration THD crosschecks <0.01pp",
+    "passed": true,
+    "max_delta_pp": 0.00015587777749193066
+  }
+]

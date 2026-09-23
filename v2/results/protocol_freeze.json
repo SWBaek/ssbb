@@ -1,0 +1,99 @@
+{
+  "config": {
+    "study_id": "SSBB-NUM-v2-20260923",
+    "evidence_level": "Public-reference-informed numerical study; not product-calibrated",
+    "reference_rating_va": 7000,
+    "thd_limit_pct": 5.0,
+    "harmonic_orders": [
+      2,
+      40
+    ],
+    "main_s_va": [
+      525,
+      700,
+      875
+    ],
+    "main_angles_deg": [
+      -60,
+      -30,
+      0,
+      30,
+      60
+    ],
+    "main_vrms": [
+      207,
+      230,
+      253
+    ],
+    "training_s_va": [
+      600,
+      800,
+      1000
+    ],
+    "training_angles_deg": [
+      -45,
+      0,
+      45
+    ],
+    "doe_design_hz": [
+      500,
+      650,
+      800
+    ],
+    "doe_k3_ohm": [
+      0,
+      2,
+      5
+    ],
+    "doe_k5_ohm": [
+      0,
+      2,
+      5
+    ],
+    "holdout_n": 72,
+    "holdout_seed": 2026092302,
+    "cycles": 40,
+    "measurement_cycles": 10,
+    "integration_substeps": 4,
+    "main_target_pass_pct": 95,
+    "baseline": {
+      "design_hz": 500,
+      "k3": 0,
+      "k5": 0,
+      "res_width_hz": 5
+    }
+  },
+  "baseline": {
+    "design_hz": 500,
+    "k3": 0,
+    "k5": 0,
+    "res_width_hz": 5
+  },
+  "nominal_plant": {
+    "case_id": "nominal",
+    "p": 700.0,
+    "q": 0.0,
+    "vrms": 230.0,
+    "vdc": 400.0,
+    "lf": 0.0015,
+    "lg": 0.0002,
+    "rf": 0.15,
+    "rg": 0.1,
+    "dead_us": 0.2,
+    "zero_a": 0.25,
+    "v3": 0.0,
+    "v5": 0.0,
+    "offset_a": 0.0,
+    "adc_step": 0.0,
+    "shape": 0,
+    "bus_ripple": 0.0
+  },
+  "source_sha256": {
+    "src/model.py": "38016a90dafa456553ac7a05d0b5698890e6985b6a75b4c9c04f17c873fc22fa",
+    "src/study.py": "73296bcb340fae57d86cdfa57505bd3cf44478bfbf7e7dac972893f00a62f0d4",
+    "src/audit.py": "10f57e8708cdbe14ce60555632d3ef42ebe9c375b382e54e70aa19774046dd9f",
+    "study_config.json": "59e3f3057ab898d64bac9d52fb7645720deef79ad3a43f3b66942dc7be6ba665",
+    "docs/00_protocol.md": "dec3459f6eb562ed1c61f0cf27cfc976a727c5544dd5a38103dce8671b8b9e0a",
+    "evidence/public_references.json": "d7374da903c7912538effbab2ba1cfdc77bdb9f88186edef7d50f98ce7d36736"
+  }
+}

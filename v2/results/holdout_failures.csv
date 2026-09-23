@@ -1,0 +1,1 @@
+run_id,group,case_id,p_ref,q_ref,s_va,angle_deg,vrms,thd_pct,i1_rms_a,ih_rms_a,irms_a,dc_a,peak_a,p_w,q1_var,p_error_w,q_error_var,pq_tolerance,saturation_fraction,periodicity_rms_a,pll_error_deg,thd_pass,guard_pass,combined_pass,ctl_design_hz,ctl_k3,ctl_k5,ctl_res_width_hz,wave_file,wave_index,solver_substeps,solver_cycles

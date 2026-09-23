@@ -1,7 +1,0 @@
-{
-  "compressed_sha256": "e617c391266e6af601ca6b887bbcba24b9080705252e743073448e0b5747c1f1",
-  "raw_bytes": 115684,
-  "files": 20,
-  "root": "v2",
-  "parts": ["bootstrap_v2/source.part1.xz", "bootstrap_v2/source.part2.xz", "bootstrap_v2/source.part3.xz", "bootstrap_v2/source.part4.xz"]
-}

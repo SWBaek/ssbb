@@ -1,0 +1,42 @@
+[
+  {
+    "stage": "D",
+    "detail": "Freeze research-only boundaries, baseline and test matrices",
+    "utc": "2026-09-23T06:32:39.881400+00:00"
+  },
+  {
+    "stage": "M0",
+    "detail": "Numerical and metric implementation checks",
+    "utc": "2026-09-23T06:32:39.882120+00:00"
+  },
+  {
+    "stage": "M1",
+    "detail": "Measure frozen baseline, no artificial THD calibration or waveform scaling",
+    "utc": "2026-09-23T06:32:41.813416+00:00"
+  },
+  {
+    "stage": "A/I",
+    "detail": "27x9 full factorial computer experiment; deterministic effect sizes, no fabricated p-values",
+    "utc": "2026-09-23T06:32:46.553986+00:00"
+  },
+  {
+    "stage": "I freeze",
+    "detail": "{'design_hz': 800.0, 'k3': 5.0, 'k5': 5.0, 'res_width_hz': 5.0}",
+    "utc": "2026-09-23T06:32:59.042485+00:00"
+  },
+  {
+    "stage": "V1",
+    "detail": "Out-of-range sensitivity and alternate error-shape scenarios; not a production distribution",
+    "utc": "2026-09-23T06:33:02.948351+00:00"
+  },
+  {
+    "stage": "V2",
+    "detail": "Control ablations, fixed-S phase, reverse power, transients, refinement",
+    "utc": "2026-09-23T06:33:09.757011+00:00"
+  },
+  {
+    "stage": "C",
+    "detail": "Persist code, raw numerical windows, assumptions and limitations",
+    "utc": "2026-09-23T06:33:16.392270+00:00"
+  }
+]

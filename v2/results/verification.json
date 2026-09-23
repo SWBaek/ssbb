@@ -1,0 +1,32 @@
+[
+  {
+    "check": "Known 3-4-5 harmonic THD is5%",
+    "passed": true,
+    "value": 5.000000000000002
+  },
+  {
+    "check": "DC excluded and recovered",
+    "passed": true,
+    "value": 0.019999999999999893
+  },
+  {
+    "check": "Ideal grid/current case THD<0.05%",
+    "passed": true,
+    "value": 8.651674024659632e-05
+  },
+  {
+    "check": "RK4 4->16 substeps THD error 0.0",
+    "passed": true,
+    "value": 2.654460333317843e-06
+  },
+  {
+    "check": "RK4 4->16 substeps THD error 5",
+    "passed": true,
+    "value": 1.7796985125606568e-06
+  },
+  {
+    "check": "FFT vs direct harmonic projection",
+    "passed": true,
+    "value": 5.609744302506031e-14
+  }
+]

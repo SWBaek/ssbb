@@ -1,0 +1,91 @@
+{
+  "study_id": "SSBB-NUM-v2-20260923",
+  "evidence_level": "Public-reference-informed numerical study; not product-calibrated",
+  "selected": {
+    "design_hz": 800.0,
+    "k3": 5.0,
+    "k5": 5.0,
+    "res_width_hz": 5.0
+  },
+  "baseline": {
+    "n": 45,
+    "mean_thd": 5.9566169752043825,
+    "min_thd": 4.389804723349208,
+    "max_thd": 7.802126284990804,
+    "thd_pass": 10,
+    "combined_pass": 10,
+    "guard_fail": 0,
+    "thd_pass_pct": 22.22222222222222,
+    "combined_pass_pct": 22.22222222222222
+  },
+  "improved": {
+    "n": 45,
+    "mean_thd": 2.7958324115928637,
+    "min_thd": 2.0929548685709083,
+    "max_thd": 3.6181897821593827,
+    "thd_pass": 45,
+    "combined_pass": 45,
+    "guard_fail": 0,
+    "thd_pass_pct": 100.0,
+    "combined_pass_pct": 100.0
+  },
+  "sentinel_baseline": {
+    "n": 36,
+    "mean_thd": 1.558486666214195,
+    "min_thd": 0.5827047684927606,
+    "max_thd": 3.441256829992825,
+    "thd_pass": 36,
+    "combined_pass": 35,
+    "guard_fail": 1,
+    "thd_pass_pct": 100.0,
+    "combined_pass_pct": 97.22222222222221
+  },
+  "sentinel_improved": {
+    "n": 36,
+    "mean_thd": 0.7660016776009506,
+    "min_thd": 0.28819891610599635,
+    "max_thd": 1.6584656266984572,
+    "thd_pass": 36,
+    "combined_pass": 35,
+    "guard_fail": 1,
+    "thd_pass_pct": 100.0,
+    "combined_pass_pct": 97.22222222222221
+  },
+  "holdout_baseline": {
+    "n": 72,
+    "mean_thd": 5.104640274183591,
+    "min_thd": 2.4018997571525205,
+    "max_thd": 9.473929935029204,
+    "thd_pass": 42,
+    "combined_pass": 42,
+    "guard_fail": 0,
+    "thd_pass_pct": 58.333333333333336,
+    "combined_pass_pct": 58.333333333333336
+  },
+  "holdout_improved": {
+    "n": 72,
+    "mean_thd": 2.4439927410821713,
+    "min_thd": 1.1748002276563485,
+    "max_thd": 4.467101743855898,
+    "thd_pass": 72,
+    "combined_pass": 72,
+    "guard_fail": 0,
+    "thd_pass_pct": 100.0,
+    "combined_pass_pct": 100.0
+  },
+  "main_mean_reduction_pp": 3.1607845636115193,
+  "main_worsened": 0,
+  "total_performance_runs": 663,
+  "numerical_checks": 6,
+  "target_main_pct": 95,
+  "target_met": true,
+  "main_guard_all_pass": true,
+  "explicit_limitations": [
+    "Not calibrated against this product",
+    "No switching or LF-leg commutation model",
+    "Q-specific actual mechanism not established",
+    "Research THD 2:40 threshold, not certification",
+    "Ideal DC source excludes full OBC interactions",
+    "Synthetic stress distribution is not a defect probability"
+  ]
+}

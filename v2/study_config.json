@@ -1,0 +1,22 @@
+{
+  "study_id": "SSBB-NUM-v2-20260923",
+  "evidence_level": "Public-reference-informed numerical study; not product-calibrated",
+  "reference_rating_va": 7000,
+  "thd_limit_pct": 5.0,
+  "harmonic_orders": [2,40],
+  "main_s_va": [525,700,875],
+  "main_angles_deg": [-60,-30,0,30,60],
+  "main_vrms": [207,230,253],
+  "training_s_va": [600,800,1000],
+  "training_angles_deg": [-45,0,45],
+  "doe_design_hz": [500,650,800],
+  "doe_k3_ohm": [0,2,5],
+  "doe_k5_ohm": [0,2,5],
+  "holdout_n": 72,
+  "holdout_seed": 2026092302,
+  "cycles": 40,
+  "measurement_cycles": 10,
+  "integration_substeps": 4,
+  "main_target_pass_pct": 95,
+  "baseline": {"design_hz":500,"k3":0,"k5":0,"res_width_hz":5}
+}
