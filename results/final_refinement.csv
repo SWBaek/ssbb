@@ -1,0 +1,6 @@
+run_id,source_run_id,source_phase,case_id,thd_16,thd_32,difference_pp,same_thd_decision,wave_archive
+refine_1,baseline_0024,baseline,M024,9.00598071747,9.00598072093,3.45968054205e-09,True,data/final_refinement_000.npz
+refine_2,baseline_0055,baseline,M055,37.257979768,37.2579798505,8.25677162197e-08,True,data/final_refinement_000.npz
+refine_3,improved_0055,improved,M055,1.33975067029,1.33975064749,2.27989112034e-08,True,data/final_refinement_000.npz
+refine_4,holdout_improved_0066,holdout,H066,6.11719117637,6.11718859224,2.58412880783e-06,True,data/final_refinement_000.npz
+refine_5,holdout_improved_0069,holdout,H069,4.97739129948,4.97739005967,1.23981228572e-06,True,data/final_refinement_000.npz

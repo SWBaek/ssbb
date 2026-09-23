@@ -1,0 +1,188 @@
+[
+  {
+    "number": 1,
+    "stage": "SIX SIGMA BB · NUMERICAL STUDY",
+    "title": "V2G 저부하·무효전력 운전 전류 THD 개선 연구",
+    "source": "Protocol: docs/00_scope_and_protocol.md · docs/01_experiment_plan.md"
+  },
+  {
+    "number": 2,
+    "stage": "결론",
+    "title": "명목 조건은 달성, 불확실성 조건은 미달이 남는다",
+    "source": "results/summary.json · holdout_failures.csv · transient.csv"
+  },
+  {
+    "number": 3,
+    "stage": "DEFINE",
+    "title": "목표와 완료 범위를 먼저 구분한다",
+    "source": "docs/00_scope_and_protocol.md · study_config.json"
+  },
+  {
+    "number": 4,
+    "stage": "DEFINE",
+    "title": "THD와 종합 판정을 혼합하지 않는다",
+    "source": "src/model.py: harmonic_metrics · E01 (power-quality scope reference)"
+  },
+  {
+    "number": 5,
+    "stage": "DEFINE",
+    "title": "72점 전체를 독립 검증이라고 부르지 않는다",
+    "source": "results/main_cases.csv · training_cases.csv · holdout_cases.csv"
+  },
+  {
+    "number": 6,
+    "stage": "MEASURE · MODEL",
+    "title": "계산되는 것은 전류의 미분방정식이다",
+    "source": "src/model.py: rhs, rk4_step · docs/02_model_and_validation.md"
+  },
+  {
+    "number": 7,
+    "stage": "MEASURE · CONTROL",
+    "title": "dq PI·PLL·지연·전압 제한을 이산 시간으로 실행한다",
+    "source": "src/model.py: _simulate · docs/02_model_and_validation.md"
+  },
+  {
+    "number": 8,
+    "stage": "MEASURE · MODEL BOUNDARY",
+    "title": "실제 totem-pole의 축약 모델이라는 점이 가장 큰 한계다",
+    "source": "docs/02_model_and_validation.md · E02 (TI reference context, not calibration)"
+  },
+  {
+    "number": 9,
+    "stage": "MEASURE · VERIFICATION",
+    "title": "수치 검증 23개 통과, 실물 검증은 별개다",
+    "source": "results/verification.json · convergence.csv · E03 NASA / E04 SciPy"
+  },
+  {
+    "number": 10,
+    "stage": "MEASURE · CORRECTIONS",
+    "title": "초기 검증 실패도 이력에서 제거하지 않았다",
+    "source": "docs/05_development_log.md · results/verification.json"
+  },
+  {
+    "number": 11,
+    "stage": "MEASURE · BASELINE",
+    "title": "가정한 baseline에서는 72점 모두 잠정 THD 기준을 초과한다",
+    "source": "results/baseline.csv · nominal assumptions in docs/00_scope_and_protocol.md"
+  },
+  {
+    "number": 12,
+    "stage": "ANALYZE · CAUSAL CHECK",
+    "title": "모델 안에서는 등가 dead-time 오차가 주요 원인이다",
+    "source": "results/ablation.csv · docs/01_experiment_plan.md"
+  },
+  {
+    "number": 13,
+    "stage": "ANALYZE · Q-SPECIFICITY",
+    "title": "동일 S에서 위상만 바꾸면 THD 차이는 작다",
+    "source": "results/constant_S_phase.csv · model boundary: docs/02_model_and_validation.md"
+  },
+  {
+    "number": 14,
+    "stage": "ANALYZE · EXPERIMENT DESIGN",
+    "title": "27개 제어 조합 × 9개 학습 조건을 전수 계산했다",
+    "source": "results/doe.csv · doe_candidates.csv · selected_control.json"
+  },
+  {
+    "number": 15,
+    "stage": "ANALYZE · FACTOR EFFECTS",
+    "title": "효과크기는 계산하되, 가짜 유의확률은 붙이지 않는다",
+    "source": "results/factor_effects.csv · src/study.py: factor_effects"
+  },
+  {
+    "number": 16,
+    "stage": "IMPROVE · SELECTION",
+    "title": "이산 후보 내 최선값을 동결한 뒤 다른 조건에 적용했다",
+    "source": "results/doe_candidates.csv · selected_control.json (freeze before holdout)"
+  },
+  {
+    "number": 17,
+    "stage": "IMPROVE · MAIN RESULTS",
+    "title": "동일한 72개 조건에서 평균 THD가 크게 낮아졌다",
+    "source": "results/baseline.csv · improved.csv · summary.json"
+  },
+  {
+    "number": 18,
+    "stage": "IMPROVE · WAVEFORM EVIDENCE",
+    "title": "최악 명목점의 전류 파형을 함께 확인한다",
+    "source": "results/all_runs.csv: baseline_0055 / improved_0055 · mapped data/*.npz"
+  },
+  {
+    "number": 19,
+    "stage": "VERIFY · PARTITIONS",
+    "title": "학습과 미사용 조건의 성적을 분리해서 보고한다",
+    "source": "results/training_cases.csv · holdout_cases.csv · summary.json"
+  },
+  {
+    "number": 20,
+    "stage": "VERIFY · ROBUSTNESS",
+    "title": "가정이 달라지면 명목 100%는 유지되지 않는다",
+    "source": "results/holdout_improved.csv · holdout_cases.csv · selected_control.json"
+  },
+  {
+    "number": 21,
+    "stage": "VERIFY · FAILURES",
+    "title": "종합 미달 7점을 제거하지 않고 남겼다",
+    "source": "results/holdout_failures.csv · final_refinement.csv"
+  },
+  {
+    "number": 22,
+    "stage": "VERIFY · SIDE EFFECT",
+    "title": "THD 0.54%라도 포화 조건을 위반하면 실패다",
+    "source": "results/holdout_improved.csv: H037 · comparison principle: A08 p14"
+  },
+  {
+    "number": 23,
+    "stage": "VERIFY · TRANSIENT",
+    "title": "정상상태 THD 개선이 모든 응답의 개선을 뜻하지 않는다",
+    "source": "results/transient.csv · data/transient_000.npz"
+  },
+  {
+    "number": 24,
+    "stage": "VERIFY · NUMERICAL MARGIN",
+    "title": "최종 일부 조건의 적분 정밀도를 다시 높여 확인했다",
+    "source": "results/final_refinement.csv · data/final_refinement_000.npz"
+  },
+  {
+    "number": 25,
+    "stage": "CONTROL · REPRODUCIBILITY",
+    "title": "보고서보다 원시 데이터와 재실행 경로를 남긴다",
+    "source": "README.md · data/schema.json · results/manifest.json"
+  },
+  {
+    "number": 26,
+    "stage": "CONTROL · APPLICATION GATE",
+    "title": "실제 적용 전에 닫아야 할 조건을 명시한다",
+    "source": "docs/04_logic_review.md · no empirical / financial evidence supplied"
+  },
+  {
+    "number": 27,
+    "stage": "기존 보고서 비교 · 1 / 2",
+    "title": "같은 증거 연결 방식을 채택하되, 없는 근거는 보태지 않는다",
+    "source": "User-provided 11 reports, 230 slides · docs/reference_cases.json · anonymized comparison only"
+  },
+  {
+    "number": 28,
+    "stage": "기존 보고서 비교 · 2 / 2",
+    "title": "같은 증거 연결 방식을 채택하되, 없는 근거는 보태지 않는다",
+    "source": "User-provided 11 reports, 230 slides · docs/reference_cases.json · anonymized comparison only"
+  },
+  {
+    "number": 29,
+    "stage": "논리 검토",
+    "title": "해소한 오류와 남아 있는 한계를 분리한다",
+    "source": "docs/04_logic_review.md · report/reference_comparison.md"
+  },
+  {
+    "number": 30,
+    "stage": "최종 결론",
+    "title": "조건부 제어 개선안과 재현 가능한 검증 기반을 확보했다",
+    "source": "results/summary.json · docs/04_logic_review.md"
+  },
+  {
+    "number": 31,
+    "stage": "출처 및 추적",
+    "title": "참조자료는 적용 근거와 검증 증거를 구분하여 사용했다",
+    "source": "docs/reference_cases.json · results/environment.json · results/manifest.json"
+  }
+]

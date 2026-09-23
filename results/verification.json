@@ -1,0 +1,189 @@
+{
+  "checks": [
+    {
+      "test": "known_harmonic_THD",
+      "value": 8.881784197001252e-16,
+      "limit": 1e-10,
+      "unit": "percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "known_fundamental_RMS",
+      "value": 1.7763568394002505e-15,
+      "limit": 1e-10,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "known_active_power",
+      "value": 0.0,
+      "limit": 1e-08,
+      "unit": "W",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "reactive_power_sign",
+      "value": 2.2737367544323206e-13,
+      "limit": 1e-08,
+      "unit": "var",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "RL_closed_form",
+      "value": 1.7479351299698465e-12,
+      "limit": 1e-08,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "nonlinear_RK4_vs_DOP853",
+      "value": 0.00038520168375200114,
+      "limit": 0.001,
+      "unit": "A",
+      "passed": true,
+      "note": "80 independently generated one-step cases; 16 substeps (initial 8-substep stress check failed; see development log)"
+    },
+    {
+      "test": "time_refinement_low_0.0",
+      "value": 1.0685901372653461e-06,
+      "limit": 0.02,
+      "unit": "THD percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "periodic_steady_state_low_0.0",
+      "value": 2.3651640285117645e-11,
+      "limit": 0.0001,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "time_refinement_low_1.0",
+      "value": 3.9367216975172425e-07,
+      "limit": 0.02,
+      "unit": "THD percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "periodic_steady_state_low_1.0",
+      "value": 7.455990838905368e-14,
+      "limit": 0.0001,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "time_refinement_reactive_0.0",
+      "value": 1.5417840160125706e-07,
+      "limit": 0.02,
+      "unit": "THD percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "periodic_steady_state_reactive_0.0",
+      "value": 1.0737942479528384e-13,
+      "limit": 0.0001,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "time_refinement_reactive_1.0",
+      "value": 1.2203316057668445e-07,
+      "limit": 0.02,
+      "unit": "THD percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "periodic_steady_state_reactive_1.0",
+      "value": 8.042678881266821e-14,
+      "limit": 0.0001,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "time_refinement_hard_0.0",
+      "value": 4.3676097050138196e-07,
+      "limit": 0.02,
+      "unit": "THD percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "periodic_steady_state_hard_0.0",
+      "value": 1.2047823454621422e-13,
+      "limit": 0.0001,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "time_refinement_hard_1.0",
+      "value": 5.818049153560878e-09,
+      "limit": 0.02,
+      "unit": "THD percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "periodic_steady_state_hard_1.0",
+      "value": 9.337901912642956e-14,
+      "limit": 0.0001,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "settling_40_vs_60_cycles",
+      "value": 1.2101430968414206e-14,
+      "limit": 0.001,
+      "unit": "THD percentage point",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "deterministic_repeat",
+      "value": 0.0,
+      "limit": 0.0,
+      "unit": "all channels",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "PLL_locked_phase_error",
+      "value": 0.2815754062048695,
+      "limit": 0.5,
+      "unit": "degree",
+      "passed": true,
+      "note": "50 Hz steady state; acquisition NOT tested"
+    },
+    {
+      "test": "FFT_vs_direct_projection",
+      "value": 5.142408116784223e-14,
+      "limit": 1e-10,
+      "unit": "A",
+      "passed": true,
+      "note": ""
+    },
+    {
+      "test": "mean_power_balance",
+      "value": 0.008991937642949022,
+      "limit": 0.5,
+      "unit": "W",
+      "passed": true,
+      "note": "interval trapezoid; command held separately in each interval; energy storage included"
+    }
+  ],
+  "all_passed": true
+}

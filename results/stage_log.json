@@ -1,0 +1,42 @@
+[
+  {
+    "sequence": 1,
+    "stage": "Define",
+    "detail": "Frozen protocol, explicit assumed thresholds and generic model boundary."
+  },
+  {
+    "sequence": 2,
+    "stage": "Measure-V",
+    "detail": "23 numerical checks passed; empirical validation not performed."
+  },
+  {
+    "sequence": 3,
+    "stage": "Measure-B",
+    "detail": "72 reference-model baseline cases computed; not a measured product baseline."
+  },
+  {
+    "sequence": 4,
+    "stage": "Analyze/Freeze",
+    "detail": "27x9 DOE done. Control frozen: {'bw_hz': 900.0, 'comp_gain': 1.0, 'comp_width_a': 0.3, 'estimated_dead_us': 1.0}. Hash 0e8308b221a08b50e4ae302658bf9a999f2517433c02ed34fb7df78d1f013ea5"
+  },
+  {
+    "sequence": 5,
+    "stage": "Improve",
+    "detail": "Identical 72-point matrix evaluated using frozen control."
+  },
+  {
+    "sequence": 6,
+    "stage": "Verify-Holdout",
+    "detail": "64 coverage scenarios + 8 corners without retuning; both assumed plant shapes retained."
+  },
+  {
+    "sequence": 7,
+    "stage": "Verify-Final",
+    "detail": "Ablation, constant-S phase sweep, command steps, 32-substep spot checks done."
+  },
+  {
+    "sequence": 8,
+    "stage": "Control/Review",
+    "detail": "Complete within numerical scope; product validation and BB approval still open."
+  }
+]

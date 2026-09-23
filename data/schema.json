@@ -1,0 +1,28 @@
+{
+  "format": "NPZ lossless float64; channels x samples",
+  "steady_channels": [
+    "current_a",
+    "reference_a",
+    "applied_command_v",
+    "generated_command_v",
+    "saturation",
+    "pll_phase_error_rad"
+  ],
+  "full_channels": [
+    "time_s",
+    "grid_v",
+    "current_a",
+    "reference_a",
+    "applied_command_v",
+    "generated_command_v",
+    "saturation",
+    "pll_phase_error_rad",
+    "dead_voltage_v"
+  ],
+  "sample_rate_hz": 32000.0,
+  "steady_start_s": 0.6,
+  "steady_samples": 6400,
+  "metadata": "results/all_runs.csv maps run_id to archive and every plant/control input",
+  "reconstructed_grid": "sqrt(2)*vrms*(sin(2*pi*50*t)+v3*sin(3*2*pi*50*t)+v5*sin(5*2*pi*50*t))",
+  "numeric_origin": "Direct RK4 plant integration with sampled-data control; not fabricated responses."
+}

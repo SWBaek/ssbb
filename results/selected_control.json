@@ -1,0 +1,24 @@
+{
+  "control": {
+    "bw_hz": 900.0,
+    "comp_gain": 1.0,
+    "comp_width_a": 0.3,
+    "estimated_dead_us": 1.0
+  },
+  "training_case_ids": [
+    "M030",
+    "M031",
+    "M032",
+    "M035",
+    "M036",
+    "M037",
+    "M040",
+    "M041",
+    "M042"
+  ],
+  "selection_rule": "max combined pass, min worst THD, min mean THD, min BW",
+  "selected_from": 27,
+  "selected_control_frozen_before_holdout": true,
+  "model_sha256": "8633d833036279b7e1480da4119ce9215948124716353937f251531a5d5d6c77",
+  "config_sha256": "47e67d2510390ca82397c3beecef75a79cc40c708138d985e28f9ecba31d2ed8"
+}

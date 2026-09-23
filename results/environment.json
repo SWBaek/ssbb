@@ -1,0 +1,16 @@
+{
+  "python": "3.13.15 (main, Aug  6 2026, 02:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "numba": "0.65.1",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.8",
+  "source_hashes": {
+    "src/__init__.py": "208a552182fda2575ce8a5c3cf7a30c839d8cd40ad545f6deda0035a7b03941a",
+    "src/model.py": "8633d833036279b7e1480da4119ce9215948124716353937f251531a5d5d6c77",
+    "src/report.py": "7cabe8eef86902956c2075202963ef3b341ce4907c59b5f4d5de67d9f33cd12a",
+    "src/study.py": "5b17601bafee5622a044da0251cd81c460f0f77155a7921b3150ece8f5751de3",
+    "src/verify.py": "c1e7e51f610c200565f33755a6396138dd93b099538eb99f81691dba6a8977e0"
+  }
+}
