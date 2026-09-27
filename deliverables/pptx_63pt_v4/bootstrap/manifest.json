@@ -1,0 +1,14 @@
+{
+  "packed_sha256": "1a9fdd82654395890687bd7ba0563d1ee8199ccabbf55e9b3d0bad5fbc681cbd",
+  "parts": 5,
+  "files": {
+    "revision.json": "e020c19bd3ad08c44fc23d3ecac1386de50ab269b311cb5e38583fbdf0a5ad5a",
+    "build_pptx_v4.py": "b3b60992148b5e04a3a98e3ca0e30fd21fbbf5e0d0d692f7fe0c26ddedb81e01",
+    "README.md": "ef6fd4891e2054636fd5d94c212a1ee312671386972b4a8d93e4982203f61e9d",
+    "SSBB_V4_Glossary_and_Reading_Guide.md": "60b886015705017e40f5b582d4db9ac7d635060b5ba498fd86b6c7b4825a5565",
+    "SSBB_V4_Review_and_Changes.md": "38fa1a3fbf4c7fc7f75647971dac8cc34b64e54bae4c688958c0201af028dedb"
+  },
+  "base_file": "deliverables/pptx_63pt_v2/deck.json",
+  "base_sha256": "b0b43a9719ecee315fba20ab06051e500b4d8380085bc86ca8e58cced4185292",
+  "spec_canonical_sha256": "fd8ff01e9a2812fb4b5df29223d571c4aeb4b9de3d45df2213696f325572db81"
+}
