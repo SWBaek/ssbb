@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "scope": "Remote document reconstruction and editable-object verification, not new numerical/model/HW validation. Full data re-audit is recorded in the local delivery package.",
+  "slides": 58,
+  "main_slides": 35,
+  "appendix_slides": 23,
+  "charts": 14,
+  "chart_values_checked": 1035,
+  "table_cells_checked": 1161,
+  "internal_links": 422,
+  "new_performance_simulations": false,
+  "spec_canonical_sha256": "fd8ff01e9a2812fb4b5df29223d571c4aeb4b9de3d45df2213696f325572db81"
+}

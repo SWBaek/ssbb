@@ -1,0 +1,29 @@
+{
+  "source_commit": "3bee8650af46640305e32960f4dcca62cc49bf5c",
+  "workflow_run_url": "https://github.com/SWBaek/ssbb/actions/runs/36354382976",
+  "document_version": "V4",
+  "dataset": "SSBB-NUM-20260923-v2 (63 baseline / 60 additional conditions)",
+  "publication_scope": "PPTX, PDF, glossary, review log, frozen document specification, builder and QA. Full frozen CSV/code and local audit package are also supplied as the conversation ZIP. No original corporate slides or font files are included.",
+  "artifacts": {
+    "SSBB_V4_Submission_BaekSeungwoo.pptx": {
+      "bytes": 455814,
+      "sha256": "079c62ae4b043bc931db94c2953b2521f59beed6938cd6c464ea03675e6e2cd6"
+    },
+    "SSBB_V4_Submission_BaekSeungwoo.pdf": {
+      "bytes": 1616979,
+      "sha256": "98835bf28210ad41dc18e92954e7c062a48be590c7b5b281b2765f8d697768e9"
+    },
+    "deck_v4.json": {
+      "bytes": 264484,
+      "sha256": "4f47df44eb3d263fe2d6e114fd1c8ff058309a8a240c40b35851b107af54db43"
+    },
+    "SSBB_V4_Glossary_and_Reading_Guide.md": {
+      "bytes": 23704,
+      "sha256": "60b886015705017e40f5b582d4db9ac7d635060b5ba498fd86b6c7b4825a5565"
+    },
+    "SSBB_V4_Review_and_Changes.md": {
+      "bytes": 9131,
+      "sha256": "38fa1a3fbf4c7fc7f75647971dac8cc34b64e54bae4c688958c0201af028dedb"
+    }
+  }
+}
