@@ -1,0 +1,10 @@
+{
+  "study_config.json": "d0f4f8e5d05e5544cb0c20f6be5aa3825f18023913f6ef90ff825d890486c33d",
+  "results/summary.json": "7420b7ddd3f6eb2e2fbfd781d83a1f92bef3effbe3b10caed97fc481dc76c143",
+  "results/baseline.csv": "6584572a478b07704e0ba5d30234cef26164be7ef2d371a5448f325ad0ce29f7",
+  "results/improved.csv": "5fd1df9878794f5661cf4ba6ac812fb0952a94233a7de0f9147d9db06905a24d",
+  "results/selected_control.json": "a343eba4d1f2c213f6c97ad4addaefa9b05810c59f22d1a7e513ecdf90353ee3",
+  "results/holdout_improved.csv": "6af4861f8ec6825ca400067bc2daddc63ed4a2701ef2f636330377b3e5d958f8",
+  "results/doe.csv": "0d71ea4b038f7cf7ef83020da583d3539a33af597e08659ebba37325c99c1bb3",
+  "src/model.py": "c0dd8cc113db64c229e74ae84dfbbe18c651fdaa4b8807fce8446207ea1cfc0d"
+}

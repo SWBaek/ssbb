@@ -1,0 +1,29 @@
+test_01_unique_complete_run_ids (test_study.StudyChecks.test_01_unique_complete_run_ids) ... ok
+test_02_all_raw_wave_thd (test_study.StudyChecks.test_02_all_raw_wave_thd) ... ok
+test_03_all_harmonic_coefficients (test_study.StudyChecks.test_03_all_harmonic_coefficients) ... ok
+test_04_pq_replay (test_study.StudyChecks.test_04_pq_replay) ... ok
+test_05_periodicity_and_saturation_replay (test_study.StudyChecks.test_05_periodicity_and_saturation_replay) ... ok
+test_06_all_pass_decisions (test_study.StudyChecks.test_06_all_pass_decisions) ... ok
+test_07_summary_matches_rows (test_study.StudyChecks.test_07_summary_matches_rows) ... ok
+test_08_before_after_identical_plants (test_study.StudyChecks.test_08_before_after_identical_plants) ... ok
+test_09_calibration_one_point_only (test_study.StudyChecks.test_09_calibration_one_point_only) ... ok
+test_10_calibration_freeze (test_study.StudyChecks.test_10_calibration_freeze) ... ok
+test_11_selection_freeze (test_study.StudyChecks.test_11_selection_freeze) ... ok
+test_12_doe_training_split (test_study.StudyChecks.test_12_doe_training_split) ... ok
+test_13_selection_rule_not_posthoc (test_study.StudyChecks.test_13_selection_rule_not_posthoc) ... ok
+test_14_holdout_failures_preserved (test_study.StudyChecks.test_14_holdout_failures_preserved) ... ok
+test_15_diagnostic_not_replacing_holdout (test_study.StudyChecks.test_15_diagnostic_not_replacing_holdout) ... ok
+test_16_source_mismatch_not_hidden (test_study.StudyChecks.test_16_source_mismatch_not_hidden) ... ok
+test_17_numerical_verification (test_study.StudyChecks.test_17_numerical_verification) ... ok
+test_18_numerical_refinement (test_study.StudyChecks.test_18_numerical_refinement) ... ok
+test_19_no_oracle_in_harmonic_coefficients (test_study.StudyChecks.test_19_no_oracle_in_harmonic_coefficients) ... ok
+test_20_structural_model_same_controller (test_study.StudyChecks.test_20_structural_model_same_controller) ... ok
+test_21_structural_raw_wave_replay (test_study.StudyChecks.test_21_structural_raw_wave_replay) ... ok
+test_22_coverage_not_manufacturing_probability (test_study.StudyChecks.test_22_coverage_not_manufacturing_probability) ... ok
+test_23_environment_and_config_consistency (test_study.StudyChecks.test_23_environment_and_config_consistency) ... ok
+test_24_no_original_company_slides_in_v2 (test_study.StudyChecks.test_24_no_original_company_slides_in_v2) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.876s
+
+OK

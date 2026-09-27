@@ -1,0 +1,9 @@
+{
+  "slides": 38,
+  "main_slides": 28,
+  "appendix_slides": 10,
+  "native_charts": 13,
+  "dataset": "SSBB-NUM-20260923-v2 (uploaded package, 63-point main / 60-point holdout)",
+  "pptx_sha256": "bc601d36fc0fa56e10d1cd3892a87e653ed2b067347eb6d33da7ab41749560b4",
+  "spec_sha256": "034741a2589442b040e2af18b37225003b3f92e68cf8953f1559adfb6e6de0ab"
+}

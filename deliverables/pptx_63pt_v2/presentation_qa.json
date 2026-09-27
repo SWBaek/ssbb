@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "slides": 38,
+  "main_slides": 28,
+  "appendix_slides": 10,
+  "native_charts": 13,
+  "native_tables": 27,
+  "notes": 38,
+  "verified_chart_points": 1089,
+  "editable_chart_workbooks": 13,
+  "pptx_sha256": "bc601d36fc0fa56e10d1cd3892a87e653ed2b067347eb6d33da7ab41749560b4",
+  "spec_sha256": "b0b43a9719ecee315fba20ab06051e500b4d8380085bc86ca8e58cced4185292",
+  "scope": "Presentation structure, source-derived numbers and notes; not product/BB approval."
+}

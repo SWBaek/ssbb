@@ -1,0 +1,20 @@
+{
+  "source_commit": "5eea1c3769c841fe83acb88781c380c6f1016a41",
+  "workflow_run_url": "https://github.com/SWBaek/ssbb/actions/runs/36324198362",
+  "dataset": "SSBB-NUM-20260923-v2; 63 main / 60 holdout from last conversation attachment",
+  "scope": "Presentation rebuild only. No numerical re-tuning or changes to existing /v2.",
+  "artifacts": {
+    "SSBB_V2_Submission_BaekSeungwoo.pptx": {
+      "bytes": 305825,
+      "sha256": "bc601d36fc0fa56e10d1cd3892a87e653ed2b067347eb6d33da7ab41749560b4"
+    },
+    "SSBB_V2_Submission_BaekSeungwoo.build.json": {
+      "bytes": 348,
+      "sha256": "7552ab435af9c965c866e8f10ee62bcdf38582f5d45a9618dc853949d33919c6"
+    },
+    "SSBB_V2_Submission_BaekSeungwoo.pdf": {
+      "bytes": 836477,
+      "sha256": "7fca16590dbe0e73c5498c9c3b3959d002fca6645aac721d8c863ec024ea2828"
+    }
+  }
+}
