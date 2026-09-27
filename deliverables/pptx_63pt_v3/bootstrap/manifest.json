@@ -1,0 +1,21 @@
+{
+  "parts": 6,
+  "packed_sha256": "89fde5dbc590fbc73000795f9013f6c2beeee6e9515877c25fa262ba60ed2c35",
+  "packed_bytes": 38488,
+  "files": {
+    "revision_patch.json": "0cafe374a0339864a032b9b19e4bf2eda1b2fda27447c7872f5859236be907fd",
+    "restore_spec.py": "ccf2000a2d3c631a29732b15122002263f8bc70510f0ab4e3b77af7a8b49dbb6",
+    "build_v3.py": "c0cb7a6f9b4ed3c331827412b45dc361c0ebb250d5bf4339e268fc1859324a75",
+    "validate_v3.py": "35aa010b231bf0651d5c62cf77a71d71ea3e156c9577cb253400ec98df5a1d06",
+    "analyze_v3.py": "f2dfad01d09e1c3e61d423f2febc93251a6cdc859a86e7e1fed6bd5dcd2a3826",
+    "analysis_guide.md": "a1d1f996b138fbd28bb0387232019e9ba879cc0b16336354e995c63e02024965",
+    "README.md": "7916d1652dd8561c7d209eec10d1fd191d798d447eb74c64e6ddc64f5feb774f",
+    "revision_log.md": "513eff6360aad9668f33d2afd29b34908ffe407e290e7b542ffdbab2b21680b4",
+    "analysis/descriptive_analysis.json": "d44584077d933dd0f67780c31add7ebb232cc96e09882312d5822a7ba8a44d8a",
+    "analysis/doe_sum_of_squares.csv": "f4ead9dbacb5e7fc7aef6d16738af1916add5259de6efdd881f8011515ef1eec",
+    "analysis/main_paired_comparison.csv": "5a748b71159c28d26eee511e061ba2edea26e62c14560d9d0ff7408eccd0586b",
+    "analysis/holdout_paired_comparison.csv": "575941168f881dbff923ebae4fcbb456388aeae2ab15b29b209155bc29e13d1a",
+    "v2_reaudit.log": "20fc28141871afe1ada872689e273d46a0f7eb52c74c4ce7cc5be4190f18cd53"
+  },
+  "spec_sha256": "d7c0a775e71ed3cc8b754124b2b011500efc2b732e81575cf46c7c54917e3933"
+}
