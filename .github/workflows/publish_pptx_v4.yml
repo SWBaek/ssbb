@@ -1,0 +1,50 @@
+name: Build and publish V4 reviewed BB report
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'deliverables/pptx_63pt_v4/bootstrap/**'
+      - 'deliverables/pptx_63pt_v4/publish_build.py'
+      - '.github/workflows/publish_pptx_v4.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ssbb-report-v4
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install document dependencies
+        run: |
+          python -m pip install python-pptx==1.0.2 pymupdf
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libreoffice-impress fonts-nanum
+      - name: Verify frozen source, generate PPTX, validate and export PDF
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python deliverables/pptx_63pt_v4/publish_build.py
+      - name: Commit only V4 deliverables without modifying previous versions
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f -- deliverables/pptx_63pt_v4/
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(ssbb): publish reviewed 58-slide V4 PPTX and PDF [skip ci]' -m 'AI-Model: GPT-6 Astra Pro'
+            git push origin HEAD:main
+          fi
+      - name: Preserve V4 document delivery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ssbb-report-v4
+          path: deliverables/pptx_63pt_v4/
+          retention-days: 14
