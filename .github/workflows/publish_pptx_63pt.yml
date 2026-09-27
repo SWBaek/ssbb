@@ -1,0 +1,93 @@
+name: Build submission PPTX from frozen 63-point V2 study
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'deliverables/pptx_63pt_v2/bootstrap/**'
+      - '.github/workflows/publish_pptx_63pt.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ssbb-pptx-63pt
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Restore exact frozen presentation source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json, lzma
+          root=Path('deliverables/pptx_63pt_v2').resolve()
+          parts=[root/'bootstrap'/f'part{i}.xz' for i in (1,2,3)]
+          snapshot=root/'source_bundle.json.xz'
+          if all(p.exists() for p in parts):
+              packed=b''.join(p.read_bytes() for p in parts)
+          else:
+              packed=snapshot.read_bytes()
+          assert len(packed)==29904
+          assert hashlib.sha256(packed).hexdigest()=='9337ef14c02f61e4dbb585441398788a73332d45ecb9e1438e15364e4ad17bfa'
+          raw=lzma.decompress(packed)
+          assert hashlib.sha256(raw).hexdigest()=='4a03757cfbc3732276d00036aef98274bf85434b8fedc6d5667f13103112deca'
+          files=json.loads(raw)
+          allowed={'build_pptx.py','validate_pptx.py','deck.json','source_manifest.json','README.md','v2_reaudit.log','local_presentation_qa.json','review_notes.md'}
+          assert set(files)==allowed
+          for name,content in files.items():
+              p=(root/name).resolve()
+              assert p.is_relative_to(root) and isinstance(content,str)
+              p.write_text(content,encoding='utf-8')
+          snapshot.write_bytes(packed)
+          for p in parts:
+              if p.exists():p.unlink()
+          print('Verified and restored eight source files. Existing /v2 is unchanged.')
+          PY
+      - name: Install presentation dependency
+        run: python -m pip install python-pptx==1.0.2
+      - name: Build and verify editable PowerPoint
+        working-directory: deliverables/pptx_63pt_v2
+        run: |
+          python build_pptx.py --spec deck.json --out SSBB_V2_Submission_BaekSeungwoo.pptx
+          python validate_pptx.py --pptx SSBB_V2_Submission_BaekSeungwoo.pptx --spec deck.json --out presentation_qa.json
+      - name: Install PDF renderer and Korean fallback
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libreoffice-impress fonts-nanum
+      - name: Render reading copy and record publication
+        working-directory: deliverables/pptx_63pt_v2
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          libreoffice -env:UserInstallation=file:///tmp/ssbb-pptx-pdf --headless --convert-to pdf --outdir . SSBB_V2_Submission_BaekSeungwoo.pptx
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os
+          p=Path('SSBB_V2_Submission_BaekSeungwoo.pdf')
+          assert p.exists() and p.stat().st_size>10000
+          artifacts={p.name:{'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in Path('.').glob('SSBB_V2_Submission_BaekSeungwoo.*')}
+          info={'source_commit':os.environ['SOURCE_COMMIT'],'workflow_run_url':os.environ['RUN_URL'],'dataset':'SSBB-NUM-20260923-v2; 63 main / 60 holdout from last conversation attachment','scope':'Presentation rebuild only. No numerical re-tuning or changes to existing /v2.','artifacts':artifacts}
+          Path('publication.json').write_text(json.dumps(info,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Commit only this presentation directory
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A -- deliverables/pptx_63pt_v2
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs: publish editable 38-slide BB submission deck (63pt V2) [skip ci]' -m 'AI-Model: GPT-6 Astra Pro'
+            git push origin HEAD:main
+          fi
+      - name: Preserve presentation delivery
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ssbb-pptx-63pt-delivery
+          path: deliverables/pptx_63pt_v2
+          retention-days: 14
