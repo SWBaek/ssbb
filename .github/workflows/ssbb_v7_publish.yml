@@ -1,0 +1,81 @@
+name: Recompute and publish V7 - 240Vac 48Arms Peak dq 16us
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studies/v7/bootstrap/**'
+      - '.github/workflows/ssbb_v7_publish.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ssbb-v7-publication
+  cancel-in-progress: false
+jobs:
+  recompute-and-publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      V7_WORK: /tmp/ssbb_v7
+      V7_DELIVERY_DIR: /tmp/v7_delivery
+      V7_TAG: ssbb-v7-20260928-240v48a-16us
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Verify source payload and reconstruct into an empty directory
+        run: python studies/v7/bootstrap/restore.py "$V7_WORK"
+      - name: Install pinned numerical and document dependencies
+        run: |
+          python -m pip install -r "$V7_WORK/requirements.txt"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends libreoffice-impress fonts-nanum
+      - name: Recompute all V7 runs, audit raw data, and build technical report
+        env:
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: python "$V7_WORK/src/remote_build.py"
+      - name: Commit technical V7 sources, result tables, and report only
+        run: |
+          rsync -a --exclude='waveforms/' --exclude='__pycache__/' --exclude='renders/' --exclude='*.pid' "$V7_WORK/" studies/v7/
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f -- studies/v7/
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs(ssbb): publish freshly recomputed V7 technical report and data [skip ci]' -m '240Vac / 48Arms / 11.52kVA / Peak dq / PWM and control 62500Hz. No previous-version performance data reused.' -m 'AI-Model: GPT-6 Astra Pro'
+            git push origin HEAD:main
+          fi
+      - name: Publish technical report and complete raw waveform archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          cat > "$RUNNER_TEMP/v7-release-notes.md" <<'EOF'
+          V7: freshly recomputed numerical reference study.
+          Confirmed inputs: 240 Vac, 48 Arms, 11.52 kVA, peak-valued dq commands, PWM=control=62.5 kHz (16 us).
+          Includes all 502 raw waveform runs, numerical source, result tables, audit logs, editable technical PPTX and PDF.
+          Public technical material only. Company-internal guides, certification requirements, and the internal submission report are not included.
+          This is not hardware validation, certification, or an approved production control calibration.
+          EOF
+          if gh release view "$V7_TAG" >/dev/null 2>&1; then
+            gh release upload "$V7_TAG" "$V7_DELIVERY_DIR"/*.zip "$V7_DELIVERY_DIR"/*.pptx "$V7_DELIVERY_DIR"/*.pdf "$V7_DELIVERY_DIR"/*.json --clobber
+          else
+            gh release create "$V7_TAG" "$V7_DELIVERY_DIR"/*.zip "$V7_DELIVERY_DIR"/*.pptx "$V7_DELIVERY_DIR"/*.pdf "$V7_DELIVERY_DIR"/*.json --target "$(git rev-parse HEAD)" --title 'V7 - 240Vac 48Arms 11.52kVA Peak dq, 62.5kHz control and PWM' --notes-file "$RUNNER_TEMP/v7-release-notes.md"
+          fi
+          gh release view "$V7_TAG" --json url,assets > "$V7_DELIVERY_DIR/release_verification.json"
+      - name: Preserve technical delivery and publication evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ssbb-v7-report-verification
+          path: |
+            /tmp/v7_delivery/SSBB_V7_Technical_Study.zip
+            /tmp/v7_delivery/*.pptx
+            /tmp/v7_delivery/*.pdf
+            /tmp/v7_delivery/*.json
+            /tmp/ssbb_v7/qa/*.log
+            /tmp/ssbb_v7/qa/*.json
+          if-no-files-found: warn
+          retention-days: 30
