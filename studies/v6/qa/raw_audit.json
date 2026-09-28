@@ -1,0 +1,10 @@
+{
+  "runs": 502,
+  "all_wave_hashes_verified": true,
+  "metric_max_csv_roundtrip_difference": 4.8814399633556604e-08,
+  "harmonic_max_difference_a": 4.999378688808065e-11,
+  "all_flags_equal": true,
+  "all_clock_ratios_one": true,
+  "all_fifo_offsets_verified": true,
+  "peak_command_log_verified": true
+}

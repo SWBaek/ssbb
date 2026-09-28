@@ -1,0 +1,18 @@
+[
+  {
+    "run_id": "baseline_N001_initial",
+    "current_array_exact_equal": true
+  },
+  {
+    "run_id": "improved_N021_selected",
+    "current_array_exact_equal": true
+  },
+  {
+    "run_id": "variation_R001_selected",
+    "current_array_exact_equal": true
+  },
+  {
+    "run_id": "functional_F08_selected",
+    "current_array_exact_equal": true
+  }
+]

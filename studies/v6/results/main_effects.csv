@@ -1,0 +1,10 @@
+factor,level,mean_thd,n_responses
+kr_ohm,6,2.42251859106,81
+kr_ohm,12,2.09150696649,81
+kr_ohm,18,1.96484419866,81
+band_hz,4,2.15136550214,81
+band_hz,8,2.17100588876,81
+band_hz,16,2.15649836532,81
+max_harmonic,3,2.5878737704,81
+max_harmonic,5,2.0731499826,81
+max_harmonic,7,1.81784600322,81

@@ -1,0 +1,9 @@
+case_id,control,estimated_settling_ms,unchanged_axis_peak_deviation_a,measurement
+T01,initial,21.864,0.603281204387,centered one-cycle average of dq feedback; finite horizon
+T01,selected,21.448,0.555487686842,centered one-cycle average of dq feedback; finite horizon
+T02,initial,21.16,3.09391050914,centered one-cycle average of dq feedback; finite horizon
+T02,selected,20.76,3.09317698349,centered one-cycle average of dq feedback; finite horizon
+T03,initial,28.744,6.08423925647,centered one-cycle average of dq feedback; finite horizon
+T03,selected,29.848,6.08526504119,centered one-cycle average of dq feedback; finite horizon
+T04,initial,8.344,0.607006182727,centered one-cycle average of dq feedback; finite horizon
+T04,selected,8.344,0.561191924559,centered one-cycle average of dq feedback; finite horizon

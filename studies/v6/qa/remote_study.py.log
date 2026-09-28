@@ -1,0 +1,22 @@
+runs 25 baseline_N025_initial
+runs 50 doe_N016_C01
+runs 75 doe_N014_C04
+runs 100 doe_N033_C06
+runs 125 doe_N026_C09
+runs 150 doe_N022_C12
+runs 175 doe_N015_C15
+runs 200 doe_N036_C17
+runs 225 doe_N030_C20
+runs 250 doe_N024_C23
+runs 275 doe_N016_C26
+SELECTED {'candidate': 'C21', 'bandwidth_design_hz': 800.0, 'pll_design_hz': 15.0, 'kr_ohm': 18.0, 'band_hz': 4.0, 'max_harmonic': 7, 'prediction_s': 1.6e-05, 'n': 9, 'combined': 9, 'thd_pass': 9, 'thd_max': np.float64(3.1670135552488072), 'thd_mean': 1.5358239017856028}
+runs 300 improved_N010_selected
+runs 325 improved_N035_selected
+runs 350 voltage_V007_initial
+runs 375 voltage_V019_selected
+runs 400 variation_R008_initial
+runs 425 variation_R020_selected
+runs 450 ablation_A02_no_deadtime
+runs 475 refinement_Q01_selected_2.0e-06
+runs 500 refinement_Q04_selected_1.0e-06
+FINISHED 502

@@ -1,0 +1,7 @@
+case_id,thd_pct_initial,current_rms_a_initial,combined_pass_initial,thd_pass_initial,tracking_pass_initial,rms_pass_initial,peak_pass_initial,saturation_pass_initial,steady_pass_initial,thd_pct_selected,current_rms_a_selected,combined_pass_selected,thd_pass_selected,tracking_pass_selected,rms_pass_selected,peak_pass_selected,saturation_pass_selected,steady_pass_selected,thd_decrease_pp,new_failure
+L01,7.80857129483,4.02003308551,False,False,True,True,True,True,True,3.16436704407,4.00983211858,True,True,True,True,True,True,True,4.64420425076,False
+L02,3.06989604607,11.3197427912,False,True,True,True,True,False,True,1.24588550869,11.3153303959,False,True,True,True,True,False,True,1.8240105373800002,False
+L03,3.05513353294,11.3193705135,True,True,True,True,True,True,True,1.22643415541,11.3151010948,True,True,True,True,True,True,True,1.8286993775299998,False
+L04,1.13446267574,32.007214091,False,True,True,True,True,False,True,0.529711717632,32.0032972126,False,True,True,True,True,False,True,0.6047509581080001,False
+L05,1.14118731318,31.997675763,False,True,True,True,True,False,True,0.55410800836,31.9957299723,False,True,True,True,True,False,True,0.5870793048200001,False
+L06,0.753871231662,48.0020722533,False,True,True,False,True,False,True,0.379560127825,47.998193528,False,True,True,True,True,False,True,0.374311103837,False

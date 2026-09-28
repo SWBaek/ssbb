@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "scope": "document object and numerical binding verification, not actual hardware validation",
+  "slides": 51,
+  "main_slides": 34,
+  "appendix_slides": 17,
+  "native_charts": 8,
+  "chart_values_checked": 733,
+  "native_tables": 47,
+  "table_cells_checked": 1281,
+  "notes": 51,
+  "internal_links": 367,
+  "pdf_text_outside_page": [],
+  "replacement_glyph_pages": [],
+  "pptx_sha256": "696a17d081138d7194dfc0b02b0312862a49fbb3a6a864659eed675403eadb64",
+  "pdf_sha256": "7b410b2bc46ef9598c35896a27b14c361ffade76a76255b64e8a002e798d77fe"
+}

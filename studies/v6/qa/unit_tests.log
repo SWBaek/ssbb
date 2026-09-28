@@ -1,0 +1,33 @@
+test_60hz_harmonic_centers (__main__.SpecTests.test_60hz_harmonic_centers) ... ok
+test_above_limit_rejected (__main__.SpecTests.test_above_limit_rejected) ... ok
+test_axis_meaning (__main__.SpecTests.test_axis_meaning) ... ok
+test_class_label_not_arithmetic (__main__.SpecTests.test_class_label_not_arithmetic) ... ok
+test_confirmed_schema (__main__.SpecTests.test_confirmed_schema) ... ok
+test_control_period (__main__.SpecTests.test_control_period) ... ok
+test_current (__main__.SpecTests.test_current) ... ok
+test_current_norm_rms (__main__.SpecTests.test_current_norm_rms) ... ok
+test_d48_accepted (__main__.SpecTests.test_d48_accepted) ... ok
+test_diode_zero_clamp (__main__.SpecTests.test_diode_zero_clamp) ... ok
+test_disabled_resonators (__main__.SpecTests.test_disabled_resonators) ... ok
+test_double_fullscale_rejected (__main__.SpecTests.test_double_fullscale_rejected) ... ok
+test_equal_frequencies (__main__.SpecTests.test_equal_frequencies) ... ok
+test_fourier_known_signal (__main__.SpecTests.test_fourier_known_signal) ... ok
+test_nan_rejected (__main__.SpecTests.test_nan_rejected) ... ok
+test_negative_deadtime_rejected (__main__.SpecTests.test_negative_deadtime_rejected) ... ok
+test_no_32us (__main__.SpecTests.test_no_32us) ... ok
+test_peak_circle (__main__.SpecTests.test_peak_circle) ... ok
+test_product_arithmetic (__main__.SpecTests.test_product_arithmetic) ... ok
+test_pwm_period (__main__.SpecTests.test_pwm_period) ... ok
+test_q48_accepted (__main__.SpecTests.test_q48_accepted) ... ok
+test_q_power_sign (__main__.SpecTests.test_q_power_sign) ... ok
+test_resonator_poles_stable (__main__.SpecTests.test_resonator_poles_stable) ... ok
+test_rl_exact (__main__.SpecTests.test_rl_exact) ... ok
+test_sensor_against_independent_ode (__main__.SpecTests.test_sensor_against_independent_ode) ... ok
+test_sogi_poles_stable (__main__.SpecTests.test_sogi_poles_stable) ... ok
+test_voltage (__main__.SpecTests.test_voltage) ... ok
+test_wrong_step_rejected (__main__.SpecTests.test_wrong_step_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 28 tests in 0.852s
+
+OK

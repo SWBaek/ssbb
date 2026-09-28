@@ -1,0 +1,62 @@
+{
+  "study_id": "SSBB-V6-20260928",
+  "user_confirmed": {
+    "product_class_label": "11.52 kVA급 북미 V2G OBCM",
+    "nominal_ac_voltage_rms_v": 230.0,
+    "rated_ac_current_rms_a": 48.0,
+    "dq_command_scaling": "peak amperes, amplitude-preserving Park transform",
+    "switching_frequency_hz": 62500.0,
+    "controller_frequency_hz": 62500.0,
+    "controller_period_s": 0.000016
+  },
+  "derived_not_substituted": {
+    "apparent_power_at_230v_48a_va": 11040.0,
+    "max_dq_command_vector_peak_a": 67.88225099390857,
+    "pwm_period_s": 0.000016,
+    "controller_evaluations_per_pwm": 1,
+    "arithmetic_discrepancy": "230*48=11040 VA; 11520 VA is the user product-class label, not 230*48. No silent change to 240 V or 50.087 A."
+  },
+  "model_assumptions_not_hardware_facts": {
+    "grid_frequency_hz": 60.0,
+    "dc_link_v": 400.0,
+    "filter_inductance_h": 0.001,
+    "grid_inductance_h": 0.0001,
+    "filter_resistance_ohm": 0.08,
+    "grid_resistance_ohm": 0.1,
+    "deadtime_s": 0.0000002,
+    "sensor_lpf_hz": 10000.0,
+    "adc_bits": 12,
+    "adc_full_range_a": 200.0,
+    "adc_sample_offset_from_pwm_start_s": 0.000008,
+    "nominal_sample_to_pwm_load_s": 0.000008,
+    "lf_leg_rule": "follows commanded bridge-voltage sign at PWM boundaries; grid-polarity rule tested only as structural challenge",
+    "q_sign_convention": "positive Iq gives leading current and Q1=-Vrms*Iq/sqrt(2); customer CAN convention unconfirmed",
+    "no_models_for": ["CLLC/DC-link energy dynamics", "EMI filter", "semiconductor switching loss", "LF-leg commutation blanking", "actual firmware scheduling"]
+  },
+  "predeclared_internal_criteria_not_certification": {
+    "thd_2_40_percent_max": 5.0,
+    "dq_peak_error_absolute_a": 0.3,
+    "dq_peak_error_relative": 0.02,
+    "total_current_rms_max_a": 48.0,
+    "current_peak_max_a_assumed": 75.0,
+    "saturation_time_fraction_max": 0.01,
+    "steady_low_order_cycle_change_absolute_rms_a": 0.03,
+    "steady_low_order_cycle_change_relative": 0.002,
+    "baseline_condition_thd_pass_rate_target_percent": 95.0
+  },
+  "fresh_campaign": {
+    "reuse_previous_performance_data": false,
+    "calibrate_to_previous_thd": false,
+    "main_voltage_rms_v": 230.0,
+    "main_dq_levels_rms_equivalent_for_grid_construction_only": [0,4,8,16,32,48],
+    "all_case_interfaces": "id_peak_a, iq_peak_a",
+    "doe_gain_ohm": [6.0,12.0,18.0],
+    "doe_band_hz": [4.0,8.0,16.0],
+    "doe_harmonics": [[3],[3,5],[3,5,7]],
+    "duration_s": 0.75,
+    "measurement_grid_cycles": 15,
+    "uniform_waveform_step_s": 0.000002,
+    "random_seed": 20260928,
+    "data_use": "finite deterministic design comparison; no manufactured p-values or process yield claims"
+  }
+}

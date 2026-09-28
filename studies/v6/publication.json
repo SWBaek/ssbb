@@ -1,0 +1,57 @@
+{
+  "version": "V6",
+  "status": "calculation and document verification complete; publication is recorded by workflow and release",
+  "source_commit": "762144e520348a2ac6269a5956632b5a107a1474",
+  "run_url": "https://github.com/SWBaek/ssbb/actions/runs/36365432966",
+  "elapsed_s": 302.44739294052124,
+  "spec_sha256": "e73712401f300dc687c7351d7dc4cb9e8331104aacd5aae5d84d64d03cdc2bd3",
+  "campaign_runs": 502,
+  "confirmed_inputs": {
+    "vac_v": 230,
+    "rated_rms_a": 48,
+    "external_dq": "Peak A",
+    "pwm_hz": 62500,
+    "control_hz": 62500,
+    "period_us": 16
+  },
+  "product_class_label_kva": 11.52,
+  "computed_nominal_kva": 11.04,
+  "assets": {
+    "SSBB_V6_RawWaveforms_01.zip": {
+      "bytes": 83750836,
+      "sha256": "9d778f2d6213fd1319eda0c829066074c590e1d2710c5568cfbe364120418986"
+    },
+    "SSBB_V6_RawWaveforms_02.zip": {
+      "bytes": 83446364,
+      "sha256": "b19a6923d830f86c17a1ec92ab64996850ff6f2184dc1a70406367db51109df1"
+    },
+    "SSBB_V6_RawWaveforms_03.zip": {
+      "bytes": 83770832,
+      "sha256": "f8f1106f5984e942ee339e4025d7e375afa590cef64c1813dff7db87baa56bf7"
+    },
+    "SSBB_V6_RawWaveforms_04.zip": {
+      "bytes": 83503215,
+      "sha256": "5b85d472421919a0e9d0070c63ba0449e1975f25eba023c44100c45b75fc9b84"
+    },
+    "SSBB_V6_RawWaveforms_05.zip": {
+      "bytes": 83770393,
+      "sha256": "c7c2e8b4a4555ebc0f8d58abd4dce3874d963d59013244fb606488120d4633b5"
+    },
+    "SSBB_V6_RawWaveforms_06.zip": {
+      "bytes": 67049907,
+      "sha256": "ffef90e5faf8151e56820f3dec0bf3571c0f5c76824b053d5c46acf3adf92c51"
+    },
+    "SSBB_V6_Study_and_Report.zip": {
+      "bytes": 1559175,
+      "sha256": "5b8fa08c1301698abf0f33550270ad4399faf7eab70cbc3f4997e663ee034664"
+    },
+    "SSBB_V6_Submission_BaekSeungwoo.pdf": {
+      "bytes": 1259280,
+      "sha256": "7b410b2bc46ef9598c35896a27b14c361ffade76a76255b64e8a002e798d77fe"
+    },
+    "SSBB_V6_Submission_BaekSeungwoo.pptx": {
+      "bytes": 362242,
+      "sha256": "696a17d081138d7194dfc0b02b0312862a49fbb3a6a864659eed675403eadb64"
+    }
+  }
+}
