@@ -1,0 +1,26 @@
+{
+  "study": "SSBB-20260928-V5",
+  "parts": 7,
+  "packed_sha256": "9119f86b1ad5d2ce836a3cc557e2735f92d17de0feec226dd57c1c7b75a0505b",
+  "files": {
+    ".gitignore": "6667eb808672355a181507becfc5866c4b1348065e6cd80d85f03ff676581dbd",
+    "README.md": "c665f5a72e93b8ab7474d9d3ac9a9d3cd24b2315c83c99e526bcc441bc1125cc",
+    "config/presentation_notes_ko.json": "bdf0e316c99ab23def0596f79cda9e752741d83b71539f86bc0a4f283e70b7c2",
+    "config/presentation_wording_ko.json": "4e939529654c59f221aa9977ce8cf5d430743bcf757e6270a573ff102ee38ec0",
+    "docs/00_scope.md": "009fefc394eef2235d36e1a05033a9d194961b2db78d49714cc90c92097b73ee",
+    "docs/02_changes_and_limits.md": "704e8b5ffe2b0dbc35b398dec6befdcf4cac821448ebe4de6f88b4bad2e3ee0a",
+    "docs/sources.md": "cb97ea7abf8c1cd3d557fbfd138a66bbb5158b4ed71ac1d3ca6c2e6d3fc4784a",
+    "qa/local_numeric_reference.csv": "014a9dbb7843d89ee3a75a7c7f33937bda49a43649fda936a76f11041697871f",
+    "qa/local_reproduction.json": "0f71be8afb436f957d0613c0ecb7783d4c3572b42d65267a38914b85b30014bc",
+    "qa/visual_review.json": "53a3db3f9908db0f5388c9218539516c71f1862c214475155624f5638e917c40",
+    "requirements.txt": "2ec55aba64ac77b4c42fd46c1dbbdaba7bd03b19dc990179041b68261383d609",
+    "src/analyze_v5.py": "5a78bddb42462e7835135c01af41b84e83ddddd94ea4fcd10d093741e2f31bd3",
+    "src/make_deck_v5.py": "697766755635212add4388116621b11ebcbf688e041c90c5d814aab9a686e6f8",
+    "src/model_v5.py": "77b14f35e23f7e3913ce9bb0ac0e2f29aae23cf97c4ed0beef24eb777e89ed7e",
+    "src/pptx_builder.py": "bcc154e331e49a3c6f4796bfc76a30b90a29b9d18dd4cd5240eedf6a1d318fb7",
+    "src/run_v5.py": "11c06ced6a257e60fe52613bab67dc3b1079f898d82c8253bbce8a030d06d6b7",
+    "src/verify_document_v5.py": "680ac54bc419d97ff68ae94367d3c83fc29f001fe9ac665b6dd92a19c0476909",
+    "src/verify_v5.py": "296a4a60363427335bd24cd12aaf48f7e3ec9e0a39bb3ff2455b27a9e3658f4c"
+  },
+  "source_policy": "Fresh V5 sources and locally computed V5 results for post-run reproduction comparison only; no V1-V4 numerical inputs."
+}
