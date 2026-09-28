@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     env:
-      V6_WORK: ${{ runner.temp }}/ssbb_v6
-      V6_DELIVERY_DIR: ${{ runner.temp }}/v6_delivery
+      V6_WORK: /tmp/ssbb_v6
+      V6_DELIVERY_DIR: /tmp/v6_delivery
       V6_TAG: ssbb-v6-20260928-230v48a-16us
     steps:
       - uses: actions/checkout@v4
@@ -69,11 +69,11 @@ jobs:
         with:
           name: ssbb-v6-report-verification
           path: |
-            ${{ runner.temp }}/v6_delivery/SSBB_V6_Study_and_Report.zip
-            ${{ runner.temp }}/v6_delivery/*.pptx
-            ${{ runner.temp }}/v6_delivery/*.pdf
-            ${{ runner.temp }}/v6_delivery/*.json
-            ${{ runner.temp }}/ssbb_v6/qa/*.log
-            ${{ runner.temp }}/ssbb_v6/qa/*.json
+            /tmp/v6_delivery/SSBB_V6_Study_and_Report.zip
+            /tmp/v6_delivery/*.pptx
+            /tmp/v6_delivery/*.pdf
+            /tmp/v6_delivery/*.json
+            /tmp/ssbb_v6/qa/*.log
+            /tmp/ssbb_v6/qa/*.json
           if-no-files-found: warn
           retention-days: 30
