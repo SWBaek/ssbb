@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "runs": 502,
+  "nominal_voltage_v": 240.0,
+  "nominal_capacity_va": 11520.0,
+  "peak_command_bound_a": 67.88225099390857,
+  "pwm_and_control_hz": 62500.0,
+  "all_source_hashes_verified": true,
+  "all_raw_wave_hashes_verified": true,
+  "pwm_applied_vs_source_command_max_difference_v": 0.0,
+  "selection_recomputed_from_doe_only": true,
+  "all_condition_sets_preserved": true,
+  "old_performance_data_imported": false,
+  "note": "Pass denotes numerical record integrity, not all engineering constraints or hardware qualification."
+}

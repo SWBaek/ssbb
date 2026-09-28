@@ -1,0 +1,11 @@
+{
+  "slides": 47,
+  "main_slides": 34,
+  "appendix_slides": 13,
+  "native_tables": 44,
+  "native_charts": 8,
+  "dataset": "SSBB-V7-20260928 / 502 freshly computed runs / Peak dq / 16 us",
+  "pptx_sha256": "0e4d5c2d8ab5324bb6a8308569671db657387003997abd8eee063628704f6335",
+  "spec_sha256": "c043107eeb8cfd4b0189231545ebe94b50065fc0c98b608ab806a38a0ed3a66a"
+}
+PUBLIC 47 MAIN 34

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "scope": "Editable-object/data binding and PDF page bounds; not a substitute for visual review or hardware validation",
+  "slides": 47,
+  "main_slides": 34,
+  "appendix_slides": 13,
+  "native_charts": 8,
+  "chart_values_checked": 824,
+  "native_tables": 44,
+  "table_cells_checked": 1157,
+  "notes": 47,
+  "internal_links": 335,
+  "pdf_text_outside_page": [],
+  "replacement_glyph_pages": [],
+  "pptx_sha256": "0e4d5c2d8ab5324bb6a8308569671db657387003997abd8eee063628704f6335",
+  "pdf_sha256": "1ff88f507abc6cb7924eb84771166b24909d6fc14f770d89e5c61cd00b31efe8",
+  "dataset": "SSBB-V7-20260928 / 502 freshly computed runs / Peak dq / 16 us"
+}

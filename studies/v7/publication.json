@@ -1,0 +1,39 @@
+{
+  "source_commit": "a0908a4f49f7e6fa7db72475c93b76cf11185ac1",
+  "run_url": "https://github.com/SWBaek/ssbb/actions/runs/36369522673",
+  "scope": "Public technical material only",
+  "specification": {
+    "product_class_label": "11.52 kVA급 북미 V2G OBCM",
+    "nominal_ac_voltage_rms_v": 240.0,
+    "rated_ac_current_rms_a": 48.0,
+    "dq_command_scaling": "peak amperes, amplitude-preserving Park transform",
+    "switching_frequency_hz": 62500.0,
+    "controller_frequency_hz": 62500.0,
+    "controller_period_s": 1.6e-05,
+    "rated_apparent_power_va": 11520.0
+  },
+  "runs": 502,
+  "comparison": {
+    "status": "PASS",
+    "numbers_compared": 263,
+    "maximum_absolute_difference": 5.000000413701855e-11,
+    "relative_tolerance": 1e-07,
+    "absolute_tolerance": 1e-07,
+    "selected_candidate_equal": true,
+    "scope": "Recomputed technical study, not hardware validation"
+  },
+  "files": {
+    "SSBB_V7_Technical_Public.pptx": {
+      "bytes": 340975,
+      "sha256": "0e4d5c2d8ab5324bb6a8308569671db657387003997abd8eee063628704f6335"
+    },
+    "SSBB_V7_Technical_Public.pdf": {
+      "bytes": 1230948,
+      "sha256": "1ff88f507abc6cb7924eb84771166b24909d6fc14f770d89e5c61cd00b31efe8"
+    },
+    "summary.json": {
+      "bytes": 12974,
+      "sha256": "3209419d684eb933597147b92583723c1f326c1c4c7349f4a0a21dab44188833"
+    }
+  }
+}

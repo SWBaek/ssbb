@@ -1,0 +1,17 @@
+{
+  "scope": "engineering targets only; no external certification status",
+  "thd_limit_pct": 5.0,
+  "nominal_case_n": 47,
+  "required_pass_rate_pct": 95.0,
+  "minimum_pass_n": 45,
+  "actual_thd_pass_n": 47,
+  "thd_goal_met": true,
+  "auxiliary_all_conditions_met": false,
+  "combined_pass_n": 45,
+  "combined_fail_ids": [
+    "N001",
+    "N010"
+  ],
+  "new_nominal_combined_fail_ids": [],
+  "mean_thd_decrease_pp": 1.4382781710111485
+}

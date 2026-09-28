@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "numbers_compared": 263,
+  "maximum_absolute_difference": 5.000000413701855e-11,
+  "relative_tolerance": 1e-07,
+  "absolute_tolerance": 1e-07,
+  "selected_candidate_equal": true,
+  "scope": "Recomputed technical study, not hardware validation"
+}

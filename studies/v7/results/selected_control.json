@@ -1,0 +1,34 @@
+{
+  "candidate": "C21",
+  "bandwidth_design_hz": 800.0,
+  "pll_design_hz": 15.0,
+  "kr_ohm": 18.0,
+  "band_hz": 4.0,
+  "max_harmonic": 7,
+  "prediction_s": 1.6e-05,
+  "n": 9,
+  "combined": 9,
+  "thd_pass": 9,
+  "thd_max": 3.1450975655837246,
+  "thd_mean": 1.53610812250398,
+  "control": {
+    "bandwidth_design_hz": 800.0,
+    "pll_design_hz": 15.0,
+    "kr_ohm": 18.0,
+    "band_hz": 4.0,
+    "max_harmonic": 7,
+    "prediction_s": 1.6e-05
+  },
+  "scope": "best evaluated candidate, not a global optimum",
+  "selected_from_ids": [
+    "N014",
+    "N015",
+    "N016",
+    "N022",
+    "N024",
+    "N026",
+    "N030",
+    "N033",
+    "N036"
+  ]
+}

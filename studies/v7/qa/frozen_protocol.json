@@ -1,0 +1,24 @@
+{
+  "spec_sha256": "d70276f74d825a7485a72c67a58c4da4cd39e5608acdf1cab463ce59eb927e1a",
+  "model_sha256": "f68c673d67097cc709bcfa14784d5ceb5c1a1ab72de61e967f208d37a19db1d7",
+  "study_sha256": "530513d01b155c3a33e33d83e63a58d7a1b9cd5f1ac8e8f47ea0ba0dc6adee94",
+  "plans": {
+    "voltage_conditions.csv": "0c0de9c78549015c604b0c20bb19574c23264d3b748ddb0ec61c3928fe4dc7e2",
+    "main_conditions.csv": "45319aca3a20da8d568073e31d78ae028a8c34a2588568fba7ce47dc48e67a5c",
+    "variation_conditions.csv": "8fcfd8d7739a9e032f6f4e057753705669eef9c1205ad659c90024e5b732def8"
+  },
+  "candidate_plan_sha256": "9659624dd671584bb932c1295fb99ee906f970a5f50ceec4f4040ae08a510158",
+  "selection_ids": [
+    "N014",
+    "N015",
+    "N016",
+    "N022",
+    "N024",
+    "N026",
+    "N030",
+    "N033",
+    "N036"
+  ],
+  "selection_rule": "lexicographic: maximum combined_pass count, minimum max THD, minimum mean THD, minimum Kr, band, harmonic_max",
+  "previous_results_loaded": false
+}

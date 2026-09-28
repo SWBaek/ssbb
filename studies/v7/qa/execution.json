@@ -1,0 +1,10 @@
+{
+  "runs": 502,
+  "pwm_control_equal_every_run": true,
+  "selection_unchanged": true,
+  "spec_unchanged": true,
+  "plans_unchanged": true,
+  "python": "3.13.15 (main, Aug  6 2026, 02:15:18) [GCC 13.3.0]",
+  "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+  "run_time_finish_utc": "2026-09-28T02:25:19.416424+00:00"
+}

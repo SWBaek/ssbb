@@ -1,0 +1,474 @@
+audited 0
+audited 100
+audited 200
+audited 300
+audited 400
+audited 500
+{
+  "specification": {
+    "study_id": "SSBB-V7-20260928",
+    "user_confirmed": {
+      "product_class_label": "11.52 kVA급 북미 V2G OBCM",
+      "nominal_ac_voltage_rms_v": 240.0,
+      "rated_ac_current_rms_a": 48.0,
+      "dq_command_scaling": "peak amperes, amplitude-preserving Park transform",
+      "switching_frequency_hz": 62500.0,
+      "controller_frequency_hz": 62500.0,
+      "controller_period_s": 1.6e-05,
+      "rated_apparent_power_va": 11520.0
+    },
+    "derived_not_substituted": {
+      "max_dq_command_vector_peak_a": 67.88225099390857,
+      "pwm_period_s": 1.6e-05,
+      "controller_evaluations_per_pwm": 1,
+      "rated_apparent_power_va": 11520.0
+    },
+    "model_assumptions_not_hardware_facts": {
+      "grid_frequency_hz": 60.0,
+      "dc_link_v": 400.0,
+      "filter_inductance_h": 0.001,
+      "grid_inductance_h": 0.0001,
+      "filter_resistance_ohm": 0.08,
+      "grid_resistance_ohm": 0.1,
+      "deadtime_s": 2e-07,
+      "sensor_lpf_hz": 10000.0,
+      "adc_bits": 12,
+      "adc_full_range_a": 200.0,
+      "adc_sample_offset_from_pwm_start_s": 8e-06,
+      "nominal_sample_to_pwm_load_s": 8e-06,
+      "lf_leg_rule": "follows commanded bridge-voltage sign at PWM boundaries; grid-polarity rule tested only as structural challenge",
+      "q_sign_convention": "positive Iq gives leading current and Q1=-Vrms*Iq/sqrt(2); customer CAN convention unconfirmed",
+      "no_models_for": [
+        "CLLC/DC-link energy dynamics",
+        "EMI filter",
+        "semiconductor switching loss",
+        "LF-leg commutation blanking",
+        "actual firmware scheduling"
+      ]
+    },
+    "fresh_campaign": {
+      "reuse_previous_performance_data": false,
+      "calibrate_to_previous_thd": false,
+      "main_voltage_rms_v": 240.0,
+      "main_dq_levels_rms_equivalent_for_grid_construction_only": [
+        0,
+        4,
+        8,
+        16,
+        32,
+        48
+      ],
+      "all_case_interfaces": "id_peak_a, iq_peak_a",
+      "doe_gain_ohm": [
+        6.0,
+        12.0,
+        18.0
+      ],
+      "doe_band_hz": [
+        4.0,
+        8.0,
+        16.0
+      ],
+      "doe_harmonics": [
+        [
+          3
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          5,
+          7
+        ]
+      ],
+      "duration_s": 0.75,
+      "measurement_grid_cycles": 15,
+      "uniform_waveform_step_s": 2e-06,
+      "random_seed": 20260928,
+      "data_use": "finite deterministic design comparison; no manufactured p-values or process yield claims",
+      "voltage_challenge_vrms": [
+        216.0,
+        264.0
+      ],
+      "comparison_to_previous_version": "V6 results are not loaded. Source model retained with nominal voltage and voltage challenges updated; candidate selection repeated from new waveforms.",
+      "preserve_seed_reason": "same seed and candidate space isolate voltage revision; all results regenerated"
+    },
+    "engineering_criteria_not_external_certification": {
+      "thd_2_40_percent_max": 5.0,
+      "dq_peak_error_absolute_a": 0.3,
+      "dq_peak_error_relative": 0.02,
+      "total_current_rms_max_a": 48.0,
+      "current_peak_max_a_assumed": 75.0,
+      "saturation_time_fraction_max": 0.01,
+      "steady_low_order_cycle_change_absolute_rms_a": 0.03,
+      "steady_low_order_cycle_change_relative": 0.002,
+      "baseline_condition_thd_pass_rate_target_percent": 95.0
+    }
+  },
+  "selected": {
+    "candidate": "C21",
+    "bandwidth_design_hz": 800.0,
+    "pll_design_hz": 15.0,
+    "kr_ohm": 18.0,
+    "band_hz": 4.0,
+    "max_harmonic": 7,
+    "prediction_s": 1.6e-05,
+    "n": 9,
+    "combined": 9,
+    "thd_pass": 9,
+    "thd_max": 3.1450975655837246,
+    "thd_mean": 1.53610812250398,
+    "control": {
+      "bandwidth_design_hz": 800.0,
+      "pll_design_hz": 15.0,
+      "kr_ohm": 18.0,
+      "band_hz": 4.0,
+      "max_harmonic": 7,
+      "prediction_s": 1.6e-05
+    },
+    "scope": "best evaluated candidate, not a global optimum",
+    "selected_from_ids": [
+      "N014",
+      "N015",
+      "N016",
+      "N022",
+      "N024",
+      "N026",
+      "N030",
+      "N033",
+      "N036"
+    ]
+  },
+  "campaign_runs": 502,
+  "nominal": {
+    "initial": {
+      "n": 47,
+      "thd_mean": 2.4526424068737445,
+      "thd_max": 7.78748558996,
+      "thd_min": 0.748660497548,
+      "thd_pass_n": 42,
+      "combined_pass_n": 40,
+      "rms_pass_n": 45,
+      "tracking_pass_n": 47,
+      "saturation_pass_n": 47,
+      "steady_pass_n": 47
+    },
+    "selected": {
+      "n": 47,
+      "thd_mean": 1.014364235862596,
+      "thd_max": 3.14509756558,
+      "thd_min": 0.341644869016,
+      "thd_pass_n": 47,
+      "combined_pass_n": 45,
+      "rms_pass_n": 45,
+      "tracking_pass_n": 47,
+      "saturation_pass_n": 47,
+      "steady_pass_n": 47
+    },
+    "new_failure_ids": []
+  },
+  "selection_unused": {
+    "initial": {
+      "n": 38,
+      "thd_mean": 2.121588842050421,
+      "thd_max": 7.6537027007,
+      "thd_min": 0.748660497548,
+      "thd_pass_n": 36,
+      "combined_pass_n": 34,
+      "rms_pass_n": 36,
+      "tracking_pass_n": 38,
+      "saturation_pass_n": 38,
+      "steady_pass_n": 38
+    },
+    "selected": {
+      "n": 38,
+      "thd_mean": 0.8907933153424737,
+      "thd_max": 2.77425686389,
+      "thd_min": 0.341644869016,
+      "thd_pass_n": 38,
+      "combined_pass_n": 36,
+      "rms_pass_n": 36,
+      "tracking_pass_n": 38,
+      "saturation_pass_n": 38,
+      "steady_pass_n": 38
+    }
+  },
+  "voltage": {
+    "initial": {
+      "n": 24,
+      "thd_mean": 3.086871743496708,
+      "thd_max": 8.11565168603,
+      "thd_min": 0.68978231705,
+      "thd_pass_n": 18,
+      "combined_pass_n": 14,
+      "rms_pass_n": 20,
+      "tracking_pass_n": 24,
+      "saturation_pass_n": 23,
+      "steady_pass_n": 24
+    },
+    "selected": {
+      "n": 24,
+      "thd_mean": 1.2324365331505833,
+      "thd_max": 3.20896214315,
+      "thd_min": 0.26040582815,
+      "thd_pass_n": 24,
+      "combined_pass_n": 20,
+      "rms_pass_n": 20,
+      "tracking_pass_n": 24,
+      "saturation_pass_n": 23,
+      "steady_pass_n": 24
+    },
+    "new_failure_ids": []
+  },
+  "variation": {
+    "initial": {
+      "n": 24,
+      "thd_mean": 2.9215470497110423,
+      "thd_max": 9.29779948566,
+      "thd_min": 0.560988745524,
+      "thd_pass_n": 20,
+      "combined_pass_n": 17,
+      "rms_pass_n": 21,
+      "tracking_pass_n": 24,
+      "saturation_pass_n": 24,
+      "steady_pass_n": 24
+    },
+    "selected": {
+      "n": 24,
+      "thd_mean": 1.199501495053625,
+      "thd_max": 3.65129927226,
+      "thd_min": 0.248159403276,
+      "thd_pass_n": 24,
+      "combined_pass_n": 21,
+      "rms_pass_n": 21,
+      "tracking_pass_n": 24,
+      "saturation_pass_n": 24,
+      "steady_pass_n": 24
+    },
+    "new_failure_ids": []
+  },
+  "structure": {
+    "initial": {
+      "n": 6,
+      "thd_mean": 2.8245961055383333,
+      "thd_max": 7.78817496333,
+      "thd_min": 0.75309396533,
+      "thd_pass_n": 5,
+      "combined_pass_n": 1,
+      "rms_pass_n": 5,
+      "tracking_pass_n": 6,
+      "saturation_pass_n": 2,
+      "steady_pass_n": 6
+    },
+    "selected": {
+      "n": 6,
+      "thd_mean": 1.1808749215858334,
+      "thd_max": 3.14295415002,
+      "thd_min": 0.3775458018,
+      "thd_pass_n": 6,
+      "combined_pass_n": 2,
+      "rms_pass_n": 6,
+      "tracking_pass_n": 6,
+      "saturation_pass_n": 2,
+      "steady_pass_n": 6
+    },
+    "new_failure_ids": []
+  },
+  "strata": [
+    {
+      "stratum": "low_le_8Arms",
+      "control": "initial",
+      "n": 8,
+      "thd_mean": 5.87086844509375,
+      "thd_max": 7.78748558996,
+      "thd_min": 4.30177928041,
+      "thd_pass_n": 3,
+      "combined_pass_n": 3,
+      "rms_pass_n": 8,
+      "tracking_pass_n": 8,
+      "saturation_pass_n": 8,
+      "steady_pass_n": 8
+    },
+    {
+      "stratum": "low_le_8Arms",
+      "control": "selected",
+      "n": 8,
+      "thd_mean": 2.24702107570125,
+      "thd_max": 3.14509756558,
+      "thd_min": 1.75430164001,
+      "thd_pass_n": 8,
+      "combined_pass_n": 8,
+      "rms_pass_n": 8,
+      "tracking_pass_n": 8,
+      "saturation_pass_n": 8,
+      "steady_pass_n": 8
+    },
+    {
+      "stratum": "medium_8_to_24Arms",
+      "control": "initial",
+      "n": 19,
+      "thd_mean": 2.524952200216842,
+      "thd_max": 3.85601816011,
+      "thd_min": 1.60556129456,
+      "thd_pass_n": 19,
+      "combined_pass_n": 19,
+      "rms_pass_n": 19,
+      "tracking_pass_n": 19,
+      "saturation_pass_n": 19,
+      "steady_pass_n": 19
+    },
+    {
+      "stratum": "medium_8_to_24Arms",
+      "control": "selected",
+      "n": 19,
+      "thd_mean": 1.0732662800247368,
+      "thd_max": 1.56386319544,
+      "thd_min": 0.710272369541,
+      "thd_pass_n": 19,
+      "combined_pass_n": 19,
+      "rms_pass_n": 19,
+      "tracking_pass_n": 19,
+      "saturation_pass_n": 19,
+      "steady_pass_n": 19
+    },
+    {
+      "stratum": "high_24_to_48Arms",
+      "control": "initial",
+      "n": 20,
+      "thd_mean": 1.0166576879098002,
+      "thd_max": 1.14806328765,
+      "thd_min": 0.748660497548,
+      "thd_pass_n": 20,
+      "combined_pass_n": 18,
+      "rms_pass_n": 18,
+      "tracking_pass_n": 20,
+      "saturation_pass_n": 20,
+      "steady_pass_n": 20
+    },
+    {
+      "stratum": "high_24_to_48Arms",
+      "control": "selected",
+      "n": 20,
+      "thd_mean": 0.4653445579731,
+      "thd_max": 0.52667566131,
+      "thd_min": 0.341644869016,
+      "thd_pass_n": 20,
+      "combined_pass_n": 18,
+      "rms_pass_n": 18,
+      "tracking_pass_n": 20,
+      "saturation_pass_n": 20,
+      "steady_pass_n": 20
+    }
+  ],
+  "factorial_ss_total": 3.8718668035391755,
+  "numerical_refinement": {
+    "max_abs_thd_pp": 0.007164510199999974,
+    "max_abs_rms_a": 0.0005143906599993642,
+    "all_verdicts_equal": true
+  },
+  "duration": {
+    "max_abs_thd_pp": 0.0005405663699997731,
+    "max_abs_rms_a": 7.739984999943772e-05,
+    "all_verdicts_equal": true
+  },
+  "fft_check": {
+    "runs": 452,
+    "max_absolute_difference_pp": 2.8294156795283243e-07
+  },
+  "transients": [
+    {
+      "case_id": "T01",
+      "control": "initial",
+      "estimated_settling_ms": 21.86399999999994,
+      "unchanged_axis_peak_deviation_a": 0.604571540736738,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    },
+    {
+      "case_id": "T01",
+      "control": "selected",
+      "estimated_settling_ms": 21.463999999999984,
+      "unchanged_axis_peak_deviation_a": 0.5585787526757283,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    },
+    {
+      "case_id": "T02",
+      "control": "initial",
+      "estimated_settling_ms": 21.175999999999974,
+      "unchanged_axis_peak_deviation_a": 3.0939816466516987,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    },
+    {
+      "case_id": "T02",
+      "control": "selected",
+      "estimated_settling_ms": 20.759999999999945,
+      "unchanged_axis_peak_deviation_a": 3.0930572580078213,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    },
+    {
+      "case_id": "T03",
+      "control": "initial",
+      "estimated_settling_ms": 28.743999999999936,
+      "unchanged_axis_peak_deviation_a": 6.084349337207634,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    },
+    {
+      "case_id": "T03",
+      "control": "selected",
+      "estimated_settling_ms": 29.847999999999985,
+      "unchanged_axis_peak_deviation_a": 6.085275440085674,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    },
+    {
+      "case_id": "T04",
+      "control": "initial",
+      "estimated_settling_ms": 8.343999999999962,
+      "unchanged_axis_peak_deviation_a": 0.610702030872753,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    },
+    {
+      "case_id": "T04",
+      "control": "selected",
+      "estimated_settling_ms": 8.343999999999962,
+      "unchanged_axis_peak_deviation_a": 0.5654182759447213,
+      "measurement": "centered one-cycle average of dq feedback; finite horizon"
+    }
+  ],
+  "audit": {
+    "unit_tests": {
+      "tests_run": 28,
+      "failures": 0,
+      "errors": 0,
+      "success": true
+    },
+    "raw": {
+      "runs": 502,
+      "all_wave_hashes_verified": true,
+      "metric_max_csv_roundtrip_difference": 4.951834853272885e-08,
+      "harmonic_max_difference_a": 4.978417678103142e-11,
+      "all_flags_equal": true,
+      "all_clock_ratios_one": true,
+      "all_fifo_offsets_verified": true,
+      "peak_command_log_verified": true
+    },
+    "replays": [
+      {
+        "run_id": "baseline_N001_initial",
+        "current_array_exact_equal": true
+      },
+      {
+        "run_id": "improved_N021_selected",
+        "current_array_exact_equal": true
+      },
+      {
+        "run_id": "variation_R001_selected",
+        "current_array_exact_equal": true
+      },
+      {
+        "run_id": "functional_F08_selected",
+        "current_array_exact_equal": true
+      }
+    ]
+  }
+}
